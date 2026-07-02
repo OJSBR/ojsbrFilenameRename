@@ -7,20 +7,21 @@
 > **This is the `stable-3_4_0` branch (OJS 3.4).** For OJS 3.5 use the
 > [`stable-3_5_0`](../../tree/stable-3_5_0) branch.
 
-A generic plugin for **Open Journal Systems (OJS)** that renames the file **delivered to
-the user at download time**, without patching the core. The file stored on disk and the
-name shown in the editorial interface are **not** changed — only the `Content-Disposition`
-of the HTTP response is adjusted at runtime.
+A generic plugin for **Open Journal Systems (OJS)** that renames the file **delivered to the
+user at download time**, without patching the core. The file stored on disk and the name
+shown in the editorial interface are **not** changed — only the `Content-Disposition` of the
+HTTP response is adjusted at runtime.
 
-It works through the native `File::download` hook and supports two naming modes,
-configurable per journal:
+It works through the native `File::download` hook and supports two naming modes, configurable
+per journal:
 
 - **Default** — `submissao-{submissionId}-arquivo-{submissionFileId}.{ext}`
 - **Numbers only** — `{submissionId}-{submissionFileId}.{ext}`
 
-> Developed and maintained by **[OJSBR](https://ojsbr.com.br)**.
+> **Developed and maintained by [OJSBR](https://ojsbr.com.br).** See the
+> [Credits & authorship](#credits--authorship) section below.
 
-## Compatibility / branches
+## Compatibility & branches
 
 | OJS version | Branch | Plugin release |
 |-------------|--------|----------------|
@@ -38,9 +39,19 @@ into `plugins/generic/` (giving `plugins/generic/ojsbrFilenameRename/`). Then en
 Open the plugin **Settings** and choose the filename format: unchecked → default format
 `submissao-{id}-arquivo-{id}.{ext}`; **Numbers only** checked → `{id}-{id}.{ext}`.
 
+## Credits & authorship
+
+- **Developed and maintained by** [OJSBR](https://ojsbr.com.br) — original plugin.
+- Distributed under the **GNU GPL v3**.
+
+## Contributing
+
+Issues and pull requests are welcome. Please target the branch matching the OJS version you
+are working against.
+
 ## License
 
-Distributed under the **GNU GPL v3**. See [`LICENSE`](LICENSE).
+Distributed under the **GNU GPL v3**. See [`LICENSE`](LICENSE) and `docs/COPYING`.
 
 ---
 
@@ -50,20 +61,26 @@ Distributed under the **GNU GPL v3**. See [`LICENSE`](LICENSE).
 > [`stable-3_5_0`](../../tree/stable-3_5_0).
 
 Plugin genérico para o **Open Journal Systems (OJS)** que renomeia o arquivo **entregue ao
-usuário no momento do download**, sem alterar o core. O arquivo no disco e o nome exibido
-na interface editorial **não** são alterados. Funciona pelo hook nativo `File::download`,
-com dois modos configuráveis por revista: **Padrão**
+usuário no momento do download**, sem alterar o core. O arquivo no disco e o nome exibido na
+interface editorial **não** são alterados. Funciona pelo hook nativo `File::download`, com
+dois modos configuráveis por revista: **Padrão**
 (`submissao-{submissionId}-arquivo-{submissionFileId}.{ext}`) e **Somente números**
 (`{submissionId}-{submissionFileId}.{ext}`).
 
-> Desenvolvido e mantido pela **[OJSBR](https://ojsbr.com.br)**.
+> **Desenvolvido e mantido pela [OJSBR](https://ojsbr.com.br).** Veja a seção
+> [Créditos e autoria](#créditos-e-autoria) abaixo.
 
 ### Instalação
 
 Instale em **Configurações → Website → Plugins → Enviar um novo plugin**, ou extraia a
-pasta em `plugins/generic/` (ficando `plugins/generic/ojsbrFilenameRename/`). Depois ative
-o **OJSBR — Rename files on download** na lista de plugins *Genéricos*.
+pasta em `plugins/generic/` (ficando `plugins/generic/ojsbrFilenameRename/`). Depois ative o
+**OJSBR — Rename files on download** na lista de plugins *Genéricos*.
+
+### Créditos e autoria
+
+- **Desenvolvido e mantido pela** [OJSBR](https://ojsbr.com.br) — plugin autoral.
+- Distribuído sob a **GNU GPL v3**.
 
 ### Licença
 
-Distribuído sob a **GNU GPL v3**. Veja [`LICENSE`](LICENSE).
+Distribuído sob a **GNU GPL v3**. Veja [`LICENSE`](LICENSE) e `docs/COPYING`.

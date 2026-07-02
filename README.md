@@ -4,6 +4,8 @@
 [![Version](https://img.shields.io/badge/version-1.1.0.0-blue)](version.xml)
 [![License](https://img.shields.io/badge/license-GPL--3.0-lightgrey)](LICENSE)
 
+**⬇️ Install package:** [OJS 3.5](https://github.com/OJSBR/ojsbrFilenameRename/releases/download/1.1.0.0-ojs3.5/ojsbrFilenameRename-1.1.0.0-ojs3.5.tar.gz) · [OJS 3.4](https://github.com/OJSBR/ojsbrFilenameRename/releases/download/1.1.0.0-ojs3.4/ojsbrFilenameRename-1.1.0.0-ojs3.4.tar.gz) — or browse all [Releases](../../releases).
+
 A generic plugin for **Open Journal Systems (OJS)** that renames the file **delivered to the
 user at download time**, without patching the core. The file stored on disk and the name
 shown in the editorial interface are **not** changed — only the `Content-Disposition` of the

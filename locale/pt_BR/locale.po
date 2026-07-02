@@ -1,0 +1,17 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: ojsbrFilenameRename 1.1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: pt_BR\n"
+
+msgid "plugins.generic.ojsbrFilenameRename.displayName"
+msgstr "OJSBR — Renomear arquivos no download"
+
+msgid "plugins.generic.ojsbrFilenameRename.description"
+msgstr "Substitui o nome do arquivo entregue ao usuário no download. Formato padrão: submissao-{ID}-arquivo-{ID}.{ext}. Opcionalmente, apenas números: {ID}-{ID}.{ext}. Não altera o arquivo no servidor nem o nome exibido na interface editorial."
+
+msgid "plugins.generic.ojsbrFilenameRename.settings.description"
+msgstr "Escolha o formato do nome do arquivo enviado ao usuário quando um arquivo de submissão é baixado. O arquivo no servidor e o nome exibido na interface editorial não são alterados."
+
+msgid "plugins.generic.ojsbrFilenameRename.settings.numbersOnly.label"
+msgstr "Somente números — usar {ID-submissao}-{ID-arquivo}.{ext} em vez de submissao-{ID}-arquivo-{ID}.{ext}"

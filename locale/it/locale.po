@@ -1,0 +1,24 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: OJSBR <eder@sotto.com.br>\n"
+"Language-Team: OJSBR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-07-16T00:00:00+00:00\n"
+"PO-Revision-Date: 2026-07-16T00:00:00+00:00\n"
+"Language: it\n"
+
+msgid "plugins.generic.ojsbrFilenameRename.displayName"
+msgstr "OJSBR — Rinomina i file al download"
+
+msgid "plugins.generic.ojsbrFilenameRename.description"
+msgstr "Sostituisce il nome del file fornito durante il download. Formato predefinito: submissao-{submissionId}-arquivo-{submissionFileId}.{ext}. In alternativa, solo numeri: {submissionId}-{submissionFileId}.{ext}. Il file su disco e il nome nell'interfaccia editoriale non vengono modificati."
+
+msgid "plugins.generic.ojsbrFilenameRename.settings.description"
+msgstr "Scegli il formato del nome del file inviato all'utente quando viene scaricato un file di una proposta. Il file archiviato sul server e il nome mostrato nell'interfaccia editoriale rimangono invariati."
+
+msgid "plugins.generic.ojsbrFilenameRename.settings.numbersOnly.label"
+msgstr "Solo numeri — usa {submissionId}-{submissionFileId}.{ext} invece di submissao-{submissionId}-arquivo-{submissionFileId}.{ext}"

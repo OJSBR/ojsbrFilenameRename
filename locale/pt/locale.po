@@ -1,0 +1,23 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: OJSBR\n"
+"Language-Team: OJSBR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: pt\n"
+
+
+msgid "plugins.generic.ojsbrFilenameRename.displayName"
+msgstr "OJSBR — Renomear ficheiros na transferência"
+
+msgid "plugins.generic.ojsbrFilenameRename.description"
+msgstr "Substitui o nome do ficheiro entregue ao utilizador na transferência. Formato padrão: submissao-{ID}-arquivo-{ID}.{ext}. Opcionalmente, apenas números: {ID}-{ID}.{ext}. Não altera o ficheiro no servidor nem o nome apresentado na interface editorial."
+
+msgid "plugins.generic.ojsbrFilenameRename.settings.description"
+msgstr "Escolha o formato do nome do ficheiro enviado ao utilizador quando um ficheiro de submissão é transferido. O ficheiro no servidor e o nome apresentado na interface editorial não são alterados."
+
+msgid "plugins.generic.ojsbrFilenameRename.settings.numbersOnly.label"
+msgstr "Apenas números — utilizar {ID-submissao}-{ID-arquivo}.{ext} em vez de submissao-{ID}-arquivo-{ID}.{ext}"

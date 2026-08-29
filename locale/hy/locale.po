@@ -1,0 +1,25 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Last-Translator: OJSBR\n"
+"Language-Team: OJSBR\n"
+"Language: hy\n"
+
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.displayName"
+msgstr "OJSBR — Վերանվանել ֆայլերը ներբեռնելիս"
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.description"
+msgstr "Փոխարինում է ներբեռնման ժամանակ տրվող ֆայլի անունը։ Կանխադրված ձևաչափ՝ submissao-{submissionId}-arquivo-{submissionFileId}.{ext}։ Ընտրովի՝ միայն թվեր՝ {submissionId}-{submissionFileId}.{ext}։ Սկավառակի ֆայլը և խմբագրական միջերեսի անունը չեն փոխվում։"
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.description"
+msgstr "Ընտրեք ֆայլի անվան ձևաչափը, որը ուղարկվում է օգտվողին ներկայացման ֆայլը ներբեռնելիս։ Սերվերում պահվող ֆայլը և խմբագրական միջերեսում ցուցադրվող անունը մնում են անփոփոխ։"
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.numbersOnly.label"
+msgstr "Միայն թվեր — օգտագործել {submissionId}-{submissionFileId}.{ext}՝ submissao-{submissionId}-arquivo-{submissionFileId}.{ext}-ի փոխարեն"

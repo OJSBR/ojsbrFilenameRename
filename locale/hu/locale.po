@@ -1,0 +1,25 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Last-Translator: OJSBR\n"
+"Language-Team: OJSBR\n"
+"Language: hu\n"
+
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.displayName"
+msgstr "OJSBR — Fájlok átnevezése letöltéskor"
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.description"
+msgstr "Lecseréli a letöltéskor átadott fájlnevet. Alapértelmezett formátum: submissao-{submissionId}-arquivo-{submissionFileId}.{ext}. Választhatóan csak számok: {submissionId}-{submissionFileId}.{ext}. A lemezen lévő fájl és a szerkesztői felület neve nem változik."
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.description"
+msgstr "Válassza ki annak a fájlnévnek a formátumát, amelyet a felhasználó a beküldési fájl letöltésekor kap. A kiszolgálón tárolt fájl és a szerkesztői felületen látható név változatlan marad."
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.numbersOnly.label"
+msgstr "Csak számok — a submissao-{submissionId}-arquivo-{submissionFileId}.{ext} helyett {submissionId}-{submissionFileId}.{ext}"

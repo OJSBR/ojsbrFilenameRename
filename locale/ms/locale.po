@@ -1,0 +1,25 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Last-Translator: OJSBR\n"
+"Language-Team: OJSBR\n"
+"Language: ms\n"
+
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.displayName"
+msgstr "OJSBR — Namakan semula fail semasa muat turun"
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.description"
+msgstr "Menggantikan nama fail yang dihantar semasa muat turun. Format lalai: submissao-{submissionId}-arquivo-{submissionFileId}.{ext}. Pilihan, nombor sahaja: {submissionId}-{submissionFileId}.{ext}. Fail pada cakera dan nama dalam antara muka editorial tidak diubah."
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.description"
+msgstr "Pilih format nama fail yang dihantar kepada pengguna apabila fail serahan dimuat turun. Fail yang disimpan pada pelayan dan nama yang dipaparkan dalam antara muka editorial kekal tidak berubah."
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.numbersOnly.label"
+msgstr "Nombor sahaja — guna {submissionId}-{submissionFileId}.{ext} dan bukan submissao-{submissionId}-arquivo-{submissionFileId}.{ext}"

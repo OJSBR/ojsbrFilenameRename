@@ -1,0 +1,25 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Last-Translator: OJSBR\n"
+"Language-Team: OJSBR\n"
+"Language: uk\n"
+
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.displayName"
+msgstr "OJSBR — Перейменування файлів під час завантаження"
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.description"
+msgstr "Замінює ім'я файлу, що видається під час завантаження. Типовий формат: submissao-{submissionId}-arquivo-{submissionFileId}.{ext}. За бажанням лише цифри: {submissionId}-{submissionFileId}.{ext}. Файл на диску та назва в редакційному інтерфейсі не змінюються."
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.description"
+msgstr "Виберіть формат імені файлу, який надсилається користувачеві під час завантаження файлу подання. Файл, збережений на сервері, і назва в редакційному інтерфейсі не змінюються."
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.numbersOnly.label"
+msgstr "Лише цифри — використовувати {submissionId}-{submissionFileId}.{ext} замість submissao-{submissionId}-arquivo-{submissionFileId}.{ext}"

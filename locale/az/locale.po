@@ -1,0 +1,25 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Last-Translator: OJSBR\n"
+"Language-Team: OJSBR\n"
+"Language: az\n"
+
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.displayName"
+msgstr "OJSBR — Yükləmə zamanı faylların adını dəyiş"
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.description"
+msgstr "Yükləmə zamanı verilən fayl adını əvəz edir. Standart format: submissao-{submissionId}-arquivo-{submissionFileId}.{ext}. İstəyə görə yalnız rəqəmlər: {submissionId}-{submissionFileId}.{ext}. Diskdəki fayl və redaksiya interfeysindəki ad dəyişmir."
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.description"
+msgstr "Təqdimat faylı endirildikdə istifadəçiyə göndərilən fayl adının formatını seçin. Serverdə saxlanan fayl və redaksiya interfeysində görünən ad dəyişmir."
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.numbersOnly.label"
+msgstr "Yalnız rəqəmlər — submissao-{submissionId}-arquivo-{submissionFileId}.{ext} əvəzinə {submissionId}-{submissionFileId}.{ext} istifadə et"

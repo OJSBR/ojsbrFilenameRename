@@ -1,0 +1,25 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Last-Translator: OJSBR\n"
+"Language-Team: OJSBR\n"
+"Language: vi\n"
+
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.displayName"
+msgstr "OJSBR — Đổi tên tệp khi tải xuống"
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.description"
+msgstr "Thay thế tên tệp được cung cấp khi tải xuống. Định dạng mặc định: submissao-{submissionId}-arquivo-{submissionFileId}.{ext}. Tùy chọn chỉ số: {submissionId}-{submissionFileId}.{ext}. Tệp trên đĩa và tên trong giao diện biên tập không thay đổi."
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.description"
+msgstr "Chọn định dạng tên tệp được gửi tới người dùng khi tải xuống tệp của bài nộp. Tệp lưu trên máy chủ và tên hiển thị trong giao diện biên tập vẫn giữ nguyên."
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.numbersOnly.label"
+msgstr "Chỉ số — dùng {submissionId}-{submissionFileId}.{ext} thay cho submissao-{submissionId}-arquivo-{submissionFileId}.{ext}"

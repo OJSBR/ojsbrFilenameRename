@@ -1,0 +1,25 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Last-Translator: OJSBR\n"
+"Language-Team: OJSBR\n"
+"Language: bg\n"
+
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.displayName"
+msgstr "OJSBR — Преименуване на файловете при изтегляне"
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.description"
+msgstr "Заменя името на файла, доставян при изтегляне. Формат по подразбиране: submissao-{submissionId}-arquivo-{submissionFileId}.{ext}. По желание само цифри: {submissionId}-{submissionFileId}.{ext}. Файлът на диска и името в редакционния интерфейс не се променят."
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.description"
+msgstr "Изберете формата на името на файла, изпращан на потребителя при изтегляне на файл от предложение. Файлът, съхраняван на сървъра, и името в редакционния интерфейс остават непроменени."
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.numbersOnly.label"
+msgstr "Само цифри — използвайте {submissionId}-{submissionFileId}.{ext} вместо submissao-{submissionId}-arquivo-{submissionFileId}.{ext}"

@@ -1,0 +1,25 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Last-Translator: OJSBR\n"
+"Language-Team: OJSBR\n"
+"Language: sl\n"
+
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.displayName"
+msgstr "OJSBR — Preimenovanje datotek ob prenosu"
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.description"
+msgstr "Zamenja ime datoteke, ki se dostavi ob prenosu. Privzeta oblika: submissao-{submissionId}-arquivo-{submissionFileId}.{ext}. Izbirno samo številke: {submissionId}-{submissionFileId}.{ext}. Datoteka na disku in ime v uredniškem vmesniku se ne spremenita."
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.description"
+msgstr "Izberite obliko imena datoteke, ki jo uporabnik prejme ob prenosu datoteke prijave. Datoteka, shranjena na strežniku, in ime v uredniškem vmesniku ostaneta nespremenjena."
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.numbersOnly.label"
+msgstr "Samo številke — uporabi {submissionId}-{submissionFileId}.{ext} namesto submissao-{submissionId}-arquivo-{submissionFileId}.{ext}"

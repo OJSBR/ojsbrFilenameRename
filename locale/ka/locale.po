@@ -1,0 +1,25 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Last-Translator: OJSBR\n"
+"Language-Team: OJSBR\n"
+"Language: ka\n"
+
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.displayName"
+msgstr "OJSBR — ფაილების გადარქმევა ჩამოტვირთვისას"
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.description"
+msgstr "ცვლის ჩამოტვირთვისას გადაცემულ ფაილის სახელს. ნაგულისხმევი ფორმატი: submissao-{submissionId}-arquivo-{submissionFileId}.{ext}. სურვილისამებრ მხოლოდ ციფრები: {submissionId}-{submissionFileId}.{ext}. დისკზე არსებული ფაილი და სარედაქციო ინტერფეისის სახელი არ იცვლება."
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.description"
+msgstr "აირჩიეთ ფაილის სახელის ფორმატი, რომელიც მომხმარებელს ეგზავნება წარდგინების ფაილის ჩამოტვირთვისას. სერვერზე შენახული ფაილი და სარედაქციო ინტერფეისში ნაჩვენები სახელი უცვლელი რჩება."
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.numbersOnly.label"
+msgstr "მხოლოდ ციფრები — გამოიყენეთ {submissionId}-{submissionFileId}.{ext} და არა submissao-{submissionId}-arquivo-{submissionFileId}.{ext}"

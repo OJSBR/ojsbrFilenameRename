@@ -1,0 +1,25 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Last-Translator: OJSBR\n"
+"Language-Team: OJSBR\n"
+"Language: pl\n"
+
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.displayName"
+msgstr "OJSBR — Zmiana nazwy plików przy pobieraniu"
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.description"
+msgstr "Zastępuje nazwę pliku przekazywaną przy pobieraniu. Format domyślny: submissao-{submissionId}-arquivo-{submissionFileId}.{ext}. Opcjonalnie same liczby: {submissionId}-{submissionFileId}.{ext}. Plik na dysku i nazwa w interfejsie redakcyjnym nie ulegają zmianie."
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.description"
+msgstr "Wybierz format nazwy pliku wysyłanej użytkownikowi przy pobieraniu pliku zgłoszenia. Plik zapisany na serwerze i nazwa widoczna w interfejsie redakcyjnym pozostają bez zmian."
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.numbersOnly.label"
+msgstr "Tylko liczby — użyj {submissionId}-{submissionFileId}.{ext} zamiast submissao-{submissionId}-arquivo-{submissionFileId}.{ext}"

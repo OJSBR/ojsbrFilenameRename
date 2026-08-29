@@ -1,0 +1,25 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Last-Translator: OJSBR\n"
+"Language-Team: OJSBR\n"
+"Language: ar\n"
+
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.displayName"
+msgstr "OJSBR — إعادة تسمية الملفات عند التنزيل"
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.description"
+msgstr "يستبدل اسم الملف المُسلَّم عند التنزيل. الصيغة الافتراضية: submissao-{submissionId}-arquivo-{submissionFileId}.{ext}. واختيارياً الأرقام فقط: {submissionId}-{submissionFileId}.{ext}. لا يتغيّر الملف على القرص ولا الاسم في واجهة التحرير."
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.description"
+msgstr "اختر صيغة اسم الملف الذي يُرسَل إلى المستخدم عند تنزيل ملف طلب النشر. أما الملف المخزَّن على الخادم والاسم الظاهر في واجهة التحرير فيبقيان كما هما."
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.numbersOnly.label"
+msgstr "الأرقام فقط — استخدم {submissionId}-{submissionFileId}.{ext} بدلاً من submissao-{submissionId}-arquivo-{submissionFileId}.{ext}"

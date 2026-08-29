@@ -1,0 +1,25 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Last-Translator: OJSBR\n"
+"Language-Team: OJSBR\n"
+"Language: zh_Hans\n"
+
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.displayName"
+msgstr "OJSBR — 下载时重命名文件"
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.description"
+msgstr "替换下载时提供的文件名。默认格式：submissao-{submissionId}-arquivo-{submissionFileId}.{ext}。可选仅数字：{submissionId}-{submissionFileId}.{ext}。磁盘上的文件和编辑界面中的名称不会改变。"
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.description"
+msgstr "选择下载投稿文件时发送给用户的文件名格式。服务器上保存的文件和编辑界面中显示的名称保持不变。"
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.numbersOnly.label"
+msgstr "仅数字 — 使用 {submissionId}-{submissionFileId}.{ext}，而非 submissao-{submissionId}-arquivo-{submissionFileId}.{ext}"

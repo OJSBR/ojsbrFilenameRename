@@ -1,0 +1,25 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Last-Translator: OJSBR\n"
+"Language-Team: OJSBR\n"
+"Language: el\n"
+
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.displayName"
+msgstr "OJSBR — Μετονομασία αρχείων κατά τη λήψη"
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.description"
+msgstr "Αντικαθιστά το όνομα του αρχείου που παραδίδεται κατά τη λήψη. Προεπιλεγμένη μορφή: submissao-{submissionId}-arquivo-{submissionFileId}.{ext}. Προαιρετικά, μόνο αριθμοί: {submissionId}-{submissionFileId}.{ext}. Το αρχείο στον δίσκο και το όνομα στο περιβάλλον σύνταξης δεν αλλάζουν."
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.description"
+msgstr "Επιλέξτε τη μορφή του ονόματος αρχείου που αποστέλλεται στον χρήστη κατά τη λήψη αρχείου υποβολής. Το αρχείο που είναι αποθηκευμένο στον διακομιστή και το όνομα στο περιβάλλον σύνταξης παραμένουν αμετάβλητα."
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.numbersOnly.label"
+msgstr "Μόνο αριθμοί — χρήση {submissionId}-{submissionFileId}.{ext} αντί για submissao-{submissionId}-arquivo-{submissionFileId}.{ext}"

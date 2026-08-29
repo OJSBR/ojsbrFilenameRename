@@ -1,0 +1,25 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Last-Translator: OJSBR\n"
+"Language-Team: OJSBR\n"
+"Language: sv\n"
+
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.displayName"
+msgstr "OJSBR — Byt namn på filer vid nedladdning"
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.description"
+msgstr "Ersätter filnamnet som levereras vid nedladdning. Standardformat: submissao-{submissionId}-arquivo-{submissionFileId}.{ext}. Valfritt endast siffror: {submissionId}-{submissionFileId}.{ext}. Filen på disken och namnet i det redaktionella gränssnittet ändras inte."
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.description"
+msgstr "Välj formatet för det filnamn som skickas till användaren när en bidragsfil laddas ned. Filen som lagras på servern och namnet i det redaktionella gränssnittet ändras inte."
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.numbersOnly.label"
+msgstr "Endast siffror — använd {submissionId}-{submissionFileId}.{ext} i stället för submissao-{submissionId}-arquivo-{submissionFileId}.{ext}"

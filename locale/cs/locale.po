@@ -1,0 +1,25 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Last-Translator: OJSBR\n"
+"Language-Team: OJSBR\n"
+"Language: cs\n"
+
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.displayName"
+msgstr "OJSBR — Přejmenovat soubory při stahování"
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.description"
+msgstr "Nahrazuje název souboru předávaný při stahování. Výchozí formát: submissao-{submissionId}-arquivo-{submissionFileId}.{ext}. Volitelně pouze čísla: {submissionId}-{submissionFileId}.{ext}. Soubor na disku ani název v redakčním rozhraní se nemění."
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.description"
+msgstr "Zvolte formát názvu souboru, který se odesílá uživateli při stažení souboru příspěvku. Soubor uložený na serveru a název zobrazený v redakčním rozhraní zůstávají beze změny."
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.numbersOnly.label"
+msgstr "Pouze čísla — použít {submissionId}-{submissionFileId}.{ext} místo submissao-{submissionId}-arquivo-{submissionFileId}.{ext}"

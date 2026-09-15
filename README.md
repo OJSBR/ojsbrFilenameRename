@@ -4,7 +4,7 @@
 [![Version](https://img.shields.io/badge/version-1.2.0.0-blue)](version.xml)
 [![License](https://img.shields.io/badge/license-GPL--3.0-lightgrey)](LICENSE)
 
-**⬇️ Install package:** [OJS 3.5](https://github.com/OJSBR/ojsbrFilenameRename/releases/download/1.2.0.0/ojsbrFilenameRename-1.2.0.0.tar.gz) · [OJS 3.4](https://github.com/OJSBR/ojsbrFilenameRename/releases/download/1.1.0.1-ojs3.4/ojsbrFilenameRename-1.1.0.1-ojs3.4.tar.gz) — or browse all [Releases](../../releases).
+**⬇️ Install package:** [OJS 3.5](https://github.com/OJSBR/ojsbrFilenameRename/releases/download/1.2.0.0/ojsbrFilenameRename-1.2.0.0.tar.gz) · [OJS 3.4](https://github.com/OJSBR/ojsbrFilenameRename/releases/download/1.2.0.0-ojs3.4/ojsbrFilenameRename-1.2.0.0-ojs3.4.tar.gz) — or browse all [Releases](../../releases).
 
 A generic plugin for **Open Journal Systems (OJS)** that delivers submission files under a
 **neutral, standardized name** when they are downloaded — `submission-123-file-456.pdf` — written
@@ -20,10 +20,11 @@ interface are **not** changed.
 | OJS version | Branch | Plugin release |
 |-------------|--------|----------------|
 | OJS 3.5.x   | [`stable-3_5_0`](../../tree/stable-3_5_0) *(default)* | 1.2.0.0 |
-| OJS 3.4.x   | [`stable-3_4_0`](../../tree/stable-3_4_0) | 1.1.0.1 |
+| OJS 3.4.x   | [`stable-3_4_0`](../../tree/stable-3_4_0) | 1.2.0.0 |
 
-The translatable file name and the language setting are available from **1.2.0.0 (OJS 3.5)**.
-The OJS 3.4 branch still delivers the Portuguese name `submissao-{id}-arquivo-{id}`.
+Both branches ship the same features from **1.2.0.0**. The locale folders follow the codes of
+each OJS line (OJS 3.4: `fr_FR`, `pt_PT`, `nb`, `sr@latin`, `zh_CN`; OJS 3.5: `fr`, `pt`, `nb_NO`,
+`sr_Latn`, `zh_Hans`).
 
 ## The problem
 
@@ -147,10 +148,11 @@ armazenado no servidor e o nome exibido na interface editorial **não** são alt
 | Versão do OJS | Branch | Release do plugin |
 |---------------|--------|-------------------|
 | OJS 3.5.x     | [`stable-3_5_0`](../../tree/stable-3_5_0) *(padrão)* | 1.2.0.0 |
-| OJS 3.4.x     | [`stable-3_4_0`](../../tree/stable-3_4_0) | 1.1.0.1 |
+| OJS 3.4.x     | [`stable-3_4_0`](../../tree/stable-3_4_0) | 1.2.0.0 |
 
-O nome traduzível e a configuração de idioma existem a partir da **1.2.0.0 (OJS 3.5)**. A branch
-do OJS 3.4 continua entregando o nome em português `submissao-{id}-arquivo-{id}`.
+As duas branches têm os mesmos recursos a partir da **1.2.0.0**. As pastas de idioma seguem os
+códigos de cada linha do OJS (OJS 3.4: `fr_FR`, `pt_PT`, `nb`, `sr@latin`, `zh_CN`; OJS 3.5: `fr`,
+`pt`, `nb_NO`, `sr_Latn`, `zh_Hans`).
 
 ### O problema
 

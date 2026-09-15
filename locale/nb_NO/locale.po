@@ -1,25 +1,55 @@
 msgid ""
 msgstr ""
+"Project-Id-Version: ojsbrFilenameRename\n"
+"Last-Translator: OJSBR\n"
+"Language-Team: OJSBR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Last-Translator: OJSBR\n"
-"Language-Team: OJSBR\n"
 "Language: nb_NO\n"
-
 
 #, fuzzy
 msgid "plugins.generic.ojsbrFilenameRename.displayName"
-msgstr "OJSBR — Gi filer nytt navn ved nedlasting"
+msgstr "Gi Nytt Navn til Filer ved Nedlasting"
 
 #, fuzzy
 msgid "plugins.generic.ojsbrFilenameRename.description"
-msgstr "Erstatter filnavnet som leveres ved nedlasting. Standardformat: submissao-{submissionId}-arquivo-{submissionFileId}.{ext}. Eventuelt bare tall: {submissionId}-{submissionFileId}.{ext}. Filen på disken og navnet i redaksjonsgrensesnittet endres ikke."
+msgstr "Leverer innleveringens filer med et nøytralt, standardisert navn ved nedlasting, for eksempel innlevering-123-fil-456.pdf, på språket til den som laster ned eller tidsskriftets språk, eller bare med tall. Den lagrede filen og navnet i det redaksjonelle grensesnittet endres ikke."
 
 #, fuzzy
 msgid "plugins.generic.ojsbrFilenameRename.settings.description"
-msgstr "Velg formatet på filnavnet som sendes til brukeren når en innsendingsfil lastes ned. Filen som er lagret på serveren, og navnet som vises i redaksjonsgrensesnittet, endres ikke."
+msgstr "Velg hvordan innleveringens filer navngis når noen laster dem ned. Filen på serveren og navnet i det redaksjonelle grensesnittet endres ikke."
 
 #, fuzzy
-msgid "plugins.generic.ojsbrFilenameRename.settings.numbersOnly.label"
-msgstr "Bare tall — bruk {submissionId}-{submissionFileId}.{ext} i stedet for submissao-{submissionId}-arquivo-{submissionFileId}.{ext}"
+msgid "plugins.generic.ojsbrFilenameRename.settings.format"
+msgstr "Format for filnavn"
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.format.descriptive"
+msgstr "Beskrivende navn: {$example}"
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.format.numbersOnly"
+msgstr "Bare tall: {$example}"
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.language"
+msgstr "Språk for det beskrivende navnet"
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.language.description"
+msgstr "Gjelder ikke formatet med bare tall. Et språk uten denne oversettelsen bruker engelsk."
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.language.user"
+msgstr "Grensesnittspråket til den som laster ned"
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.language.context"
+msgstr "Tidsskriftets hovedspråk, {$language}: {$example}"
+
+#. File name delivered on download, without the extension. Keep both placeholders.
+#. Latin-script languages: lowercase letters without diacritics, digits and hyphens only.
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.filename.descriptive"
+msgstr "innlevering-{$submissionId}-fil-{$submissionFileId}"

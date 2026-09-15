@@ -1,25 +1,55 @@
 msgid ""
 msgstr ""
+"Project-Id-Version: ojsbrFilenameRename\n"
+"Last-Translator: OJSBR\n"
+"Language-Team: OJSBR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Last-Translator: OJSBR\n"
-"Language-Team: OJSBR\n"
 "Language: uk\n"
-
 
 #, fuzzy
 msgid "plugins.generic.ojsbrFilenameRename.displayName"
-msgstr "OJSBR — Перейменування файлів під час завантаження"
+msgstr "Перейменування Файлів під час Завантаження"
 
 #, fuzzy
 msgid "plugins.generic.ojsbrFilenameRename.description"
-msgstr "Замінює ім'я файлу, що видається під час завантаження. Типовий формат: submissao-{submissionId}-arquivo-{submissionFileId}.{ext}. За бажанням лише цифри: {submissionId}-{submissionFileId}.{ext}. Файл на диску та назва в редакційному інтерфейсі не змінюються."
+msgstr "Під час завантаження видає файли подання під нейтральною уніфікованою назвою, наприклад подання-123-файл-456.pdf, мовою того, хто завантажує, або журналу, чи лише цифрами. Збережений файл і назва в редакційному інтерфейсі не змінюються."
 
 #, fuzzy
 msgid "plugins.generic.ojsbrFilenameRename.settings.description"
-msgstr "Виберіть формат імені файлу, який надсилається користувачеві під час завантаження файлу подання. Файл, збережений на сервері, і назва в редакційному інтерфейсі не змінюються."
+msgstr "Виберіть, як називати файли подання, коли їх завантажують. Файл на сервері й назва в редакційному інтерфейсі не змінюються."
 
 #, fuzzy
-msgid "plugins.generic.ojsbrFilenameRename.settings.numbersOnly.label"
-msgstr "Лише цифри — використовувати {submissionId}-{submissionFileId}.{ext} замість submissao-{submissionId}-arquivo-{submissionFileId}.{ext}"
+msgid "plugins.generic.ojsbrFilenameRename.settings.format"
+msgstr "Формат назви файлу"
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.format.descriptive"
+msgstr "Описова назва: {$example}"
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.format.numbersOnly"
+msgstr "Лише цифри: {$example}"
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.language"
+msgstr "Мова описової назви"
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.language.description"
+msgstr "Не стосується формату лише з цифр. Мова без цього перекладу використовує англійську."
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.language.user"
+msgstr "Мова інтерфейсу того, хто завантажує"
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.language.context"
+msgstr "Основна мова журналу, {$language}: {$example}"
+
+#. File name delivered on download, without the extension. Keep both placeholders.
+#. Latin-script languages: lowercase letters without diacritics, digits and hyphens only.
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.filename.descriptive"
+msgstr "подання-{$submissionId}-файл-{$submissionFileId}"

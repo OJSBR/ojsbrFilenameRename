@@ -1,25 +1,55 @@
 msgid ""
 msgstr ""
+"Project-Id-Version: ojsbrFilenameRename\n"
+"Last-Translator: OJSBR\n"
+"Language-Team: OJSBR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Last-Translator: OJSBR\n"
-"Language-Team: OJSBR\n"
 "Language: zh_Hans\n"
-
 
 #, fuzzy
 msgid "plugins.generic.ojsbrFilenameRename.displayName"
-msgstr "OJSBR — 下载时重命名文件"
+msgstr "下载时重命名文件"
 
 #, fuzzy
 msgid "plugins.generic.ojsbrFilenameRename.description"
-msgstr "替换下载时提供的文件名。默认格式：submissao-{submissionId}-arquivo-{submissionFileId}.{ext}。可选仅数字：{submissionId}-{submissionFileId}.{ext}。磁盘上的文件和编辑界面中的名称不会改变。"
+msgstr "下载时以中立、统一的名称提供投稿文件，例如 投稿-123-文件-456.pdf，使用下载者或期刊的语言，或仅使用数字。已存储的文件和编辑界面中显示的名称不会改变。"
 
 #, fuzzy
 msgid "plugins.generic.ojsbrFilenameRename.settings.description"
-msgstr "选择下载投稿文件时发送给用户的文件名格式。服务器上保存的文件和编辑界面中显示的名称保持不变。"
+msgstr "选择有人下载投稿文件时文件的命名方式。服务器上存储的文件和编辑界面中显示的名称不会改变。"
 
 #, fuzzy
-msgid "plugins.generic.ojsbrFilenameRename.settings.numbersOnly.label"
-msgstr "仅数字 — 使用 {submissionId}-{submissionFileId}.{ext}，而非 submissao-{submissionId}-arquivo-{submissionFileId}.{ext}"
+msgid "plugins.generic.ojsbrFilenameRename.settings.format"
+msgstr "文件名格式"
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.format.descriptive"
+msgstr "描述性名称：{$example}"
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.format.numbersOnly"
+msgstr "仅数字：{$example}"
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.language"
+msgstr "描述性名称的语言"
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.language.description"
+msgstr "不适用于仅数字格式。没有此翻译的语言将使用英语。"
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.language.user"
+msgstr "下载者的界面语言"
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.language.context"
+msgstr "期刊的主要语言（{$language}）：{$example}"
+
+#. File name delivered on download, without the extension. Keep both placeholders.
+#. Latin-script languages: lowercase letters without diacritics, digits and hyphens only.
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.filename.descriptive"
+msgstr "投稿-{$submissionId}-文件-{$submissionFileId}"

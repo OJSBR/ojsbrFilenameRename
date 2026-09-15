@@ -1,25 +1,55 @@
 msgid ""
 msgstr ""
+"Project-Id-Version: ojsbrFilenameRename\n"
+"Last-Translator: OJSBR\n"
+"Language-Team: OJSBR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Last-Translator: OJSBR\n"
-"Language-Team: OJSBR\n"
 "Language: fi\n"
-
 
 #, fuzzy
 msgid "plugins.generic.ojsbrFilenameRename.displayName"
-msgstr "OJSBR — Nimeä tiedostot uudelleen ladattaessa"
+msgstr "Nimeä Tiedostot Uudelleen Latauksessa"
 
 #, fuzzy
 msgid "plugins.generic.ojsbrFilenameRename.description"
-msgstr "Korvaa latauksessa toimitettavan tiedostonimen. Oletusmuoto: submissao-{submissionId}-arquivo-{submissionFileId}.{ext}. Vaihtoehtoisesti pelkät numerot: {submissionId}-{submissionFileId}.{ext}. Levyllä oleva tiedosto ja toimituksellisen käyttöliittymän nimi eivät muutu."
+msgstr "Toimittaa käsikirjoituksen tiedostot latauksessa neutraalilla, yhtenäisellä nimellä, kuten kasikirjoitus-123-tiedosto-456.pdf, lataajan tai lehden kielellä tai pelkillä numeroilla. Tallennettu tiedosto ja toimituksellisessa käyttöliittymässä näkyvä nimi eivät muutu."
 
 #, fuzzy
 msgid "plugins.generic.ojsbrFilenameRename.settings.description"
-msgstr "Valitse sen tiedostonimen muoto, joka lähetetään käyttäjälle käsikirjoitustiedostoa ladattaessa. Palvelimelle tallennettu tiedosto ja toimituksellisessa käyttöliittymässä näkyvä nimi eivät muutu."
+msgstr "Valitse, miten käsikirjoituksen tiedostot nimetään, kun joku lataa ne. Palvelimelle tallennettu tiedosto ja toimituksellisessa käyttöliittymässä näkyvä nimi eivät muutu."
 
 #, fuzzy
-msgid "plugins.generic.ojsbrFilenameRename.settings.numbersOnly.label"
-msgstr "Vain numerot — käytä muotoa {submissionId}-{submissionFileId}.{ext} muodon submissao-{submissionId}-arquivo-{submissionFileId}.{ext} sijaan"
+msgid "plugins.generic.ojsbrFilenameRename.settings.format"
+msgstr "Tiedostonimen muoto"
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.format.descriptive"
+msgstr "Kuvaava nimi: {$example}"
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.format.numbersOnly"
+msgstr "Vain numerot: {$example}"
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.language"
+msgstr "Kuvaavan nimen kieli"
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.language.description"
+msgstr "Ei koske pelkkien numeroiden muotoa. Kieli, jolla ei ole tätä käännöstä, käyttää englantia."
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.language.user"
+msgstr "Lataajan käyttöliittymän kieli"
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.language.context"
+msgstr "Lehden ensisijainen kieli, {$language}: {$example}"
+
+#. File name delivered on download, without the extension. Keep both placeholders.
+#. Latin-script languages: lowercase letters without diacritics, digits and hyphens only.
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.filename.descriptive"
+msgstr "kasikirjoitus-{$submissionId}-tiedosto-{$submissionFileId}"

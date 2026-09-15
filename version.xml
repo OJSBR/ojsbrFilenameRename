@@ -1,20 +1,22 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE version SYSTEM "../../../lib/pkp/dtd/pluginVersion.dtd">
 
 <!--
-  * version.xml
+  * plugins/generic/ojsbrFilenameRename/version.xml
   *
-  * Copyright (c) 2026 OJSBR (https://ojsbr.com.br)
+  * Copyright (c) 2026 OJSBR (https://ojsbr.com)
   * Distributed under the GNU GPL v3. For full terms see the file docs/COPYING.
+  *
+  * Delivers submission files under a neutral, standardized and translatable
+  * name on download, without changing the stored file.
   *
   * Plugin version information.
   -->
 <version>
 	<application>ojsbrFilenameRename</application>
 	<type>plugins.generic</type>
-	<release>1.1.0.3</release>
-	<date>2026-08-29</date>
+	<release>1.2.0.0</release>
+	<date>2026-09-14</date>
 	<lazy-load>1</lazy-load>
-	<sitewide>0</sitewide>
 	<class>OjsbrFilenameRenamePlugin</class>
 </version>

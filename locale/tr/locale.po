@@ -1,25 +1,55 @@
 msgid ""
 msgstr ""
+"Project-Id-Version: ojsbrFilenameRename\n"
+"Last-Translator: OJSBR\n"
+"Language-Team: OJSBR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Last-Translator: OJSBR\n"
-"Language-Team: OJSBR\n"
 "Language: tr\n"
-
 
 #, fuzzy
 msgid "plugins.generic.ojsbrFilenameRename.displayName"
-msgstr "OJSBR — İndirirken dosyaları yeniden adlandır"
+msgstr "İndirmede Dosyaları Yeniden Adlandır"
 
 #, fuzzy
 msgid "plugins.generic.ojsbrFilenameRename.description"
-msgstr "İndirme sırasında verilen dosya adını değiştirir. Varsayılan biçim: submissao-{submissionId}-arquivo-{submissionFileId}.{ext}. İsteğe bağlı olarak yalnızca sayılar: {submissionId}-{submissionFileId}.{ext}. Diskteki dosya ve yayın kurulu arayüzündeki ad değişmez."
+msgstr "Gönderi dosyalarını indirme sırasında tarafsız ve standart bir adla sunar, örneğin gonderi-123-dosya-456.pdf; adı indiren kişinin veya derginin dilinde ya da yalnızca sayılarla. Depolanan dosya ve editoryal arayüzde görünen ad değişmez."
 
 #, fuzzy
 msgid "plugins.generic.ojsbrFilenameRename.settings.description"
-msgstr "Bir gönderi dosyası indirildiğinde kullanıcıya gönderilen dosya adının biçimini seçin. Sunucuda saklanan dosya ve yayın kurulu arayüzünde görünen ad değişmez."
+msgstr "Birisi gönderi dosyalarını indirdiğinde nasıl adlandırılacaklarını seçin. Sunucuda depolanan dosya ve editoryal arayüzde görünen ad değişmez."
 
 #, fuzzy
-msgid "plugins.generic.ojsbrFilenameRename.settings.numbersOnly.label"
-msgstr "Yalnızca sayılar — submissao-{submissionId}-arquivo-{submissionFileId}.{ext} yerine {submissionId}-{submissionFileId}.{ext} kullan"
+msgid "plugins.generic.ojsbrFilenameRename.settings.format"
+msgstr "Dosya adı biçimi"
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.format.descriptive"
+msgstr "Açıklayıcı ad: {$example}"
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.format.numbersOnly"
+msgstr "Yalnızca sayılar: {$example}"
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.language"
+msgstr "Açıklayıcı adın dili"
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.language.description"
+msgstr "Yalnızca sayılardan oluşan biçime uygulanmaz. Bu çevirisi olmayan bir dil İngilizceyi kullanır."
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.language.user"
+msgstr "İndiren kişinin arayüz dili"
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.language.context"
+msgstr "Derginin birincil dili, {$language}: {$example}"
+
+#. File name delivered on download, without the extension. Keep both placeholders.
+#. Latin-script languages: lowercase letters without diacritics, digits and hyphens only.
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.filename.descriptive"
+msgstr "gonderi-{$submissionId}-dosya-{$submissionFileId}"

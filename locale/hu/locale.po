@@ -1,25 +1,55 @@
 msgid ""
 msgstr ""
+"Project-Id-Version: ojsbrFilenameRename\n"
+"Last-Translator: OJSBR\n"
+"Language-Team: OJSBR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Last-Translator: OJSBR\n"
-"Language-Team: OJSBR\n"
 "Language: hu\n"
-
 
 #, fuzzy
 msgid "plugins.generic.ojsbrFilenameRename.displayName"
-msgstr "OJSBR — Fájlok átnevezése letöltéskor"
+msgstr "Fájlok Átnevezése Letöltéskor"
 
 #, fuzzy
 msgid "plugins.generic.ojsbrFilenameRename.description"
-msgstr "Lecseréli a letöltéskor átadott fájlnevet. Alapértelmezett formátum: submissao-{submissionId}-arquivo-{submissionFileId}.{ext}. Választhatóan csak számok: {submissionId}-{submissionFileId}.{ext}. A lemezen lévő fájl és a szerkesztői felület neve nem változik."
+msgstr "Letöltéskor semleges, egységes néven adja ki a beküldés fájljait, például bekuldes-123-fajl-456.pdf, a letöltő személy vagy a folyóirat nyelvén, vagy csak számokkal. A tárolt fájl és a szerkesztői felületen látható név nem változik."
 
 #, fuzzy
 msgid "plugins.generic.ojsbrFilenameRename.settings.description"
-msgstr "Válassza ki annak a fájlnévnek a formátumát, amelyet a felhasználó a beküldési fájl letöltésekor kap. A kiszolgálón tárolt fájl és a szerkesztői felületen látható név változatlan marad."
+msgstr "Válassza ki, milyen néven kapják meg a beküldés fájljait, amikor valaki letölti őket. A szerveren tárolt fájl és a szerkesztői felületen látható név nem változik."
 
 #, fuzzy
-msgid "plugins.generic.ojsbrFilenameRename.settings.numbersOnly.label"
-msgstr "Csak számok — a submissao-{submissionId}-arquivo-{submissionFileId}.{ext} helyett {submissionId}-{submissionFileId}.{ext}"
+msgid "plugins.generic.ojsbrFilenameRename.settings.format"
+msgstr "Fájlnév formátuma"
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.format.descriptive"
+msgstr "Leíró név: {$example}"
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.format.numbersOnly"
+msgstr "Csak számok: {$example}"
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.language"
+msgstr "A leíró név nyelve"
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.language.description"
+msgstr "Nem vonatkozik a csak számokat tartalmazó formátumra. A fordítás nélküli nyelv az angolt használja."
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.language.user"
+msgstr "A letöltő személy felületének nyelve"
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.language.context"
+msgstr "A folyóirat elsődleges nyelve, {$language}: {$example}"
+
+#. File name delivered on download, without the extension. Keep both placeholders.
+#. Latin-script languages: lowercase letters without diacritics, digits and hyphens only.
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.filename.descriptive"
+msgstr "bekuldes-{$submissionId}-fajl-{$submissionFileId}"

@@ -1,25 +1,55 @@
 msgid ""
 msgstr ""
+"Project-Id-Version: ojsbrFilenameRename\n"
+"Last-Translator: OJSBR\n"
+"Language-Team: OJSBR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Last-Translator: OJSBR\n"
-"Language-Team: OJSBR\n"
 "Language: id\n"
-
 
 #, fuzzy
 msgid "plugins.generic.ojsbrFilenameRename.displayName"
-msgstr "OJSBR — Ganti nama berkas saat diunduh"
+msgstr "Ganti Nama Berkas saat Diunduh"
 
 #, fuzzy
 msgid "plugins.generic.ojsbrFilenameRename.description"
-msgstr "Mengganti nama berkas yang dikirim saat diunduh. Format bawaan: submissao-{submissionId}-arquivo-{submissionFileId}.{ext}. Opsional, hanya angka: {submissionId}-{submissionFileId}.{ext}. Berkas di disk dan nama di antarmuka editorial tidak diubah."
+msgstr "Menyerahkan berkas naskah dengan nama netral dan seragam saat diunduh, misalnya naskah-123-file-456.pdf, dalam bahasa pengunduh atau jurnal, atau hanya angka. Berkas yang tersimpan dan nama yang tampil di antarmuka editorial tidak diubah."
 
 #, fuzzy
 msgid "plugins.generic.ojsbrFilenameRename.settings.description"
-msgstr "Pilih format nama berkas yang dikirim kepada pengguna saat berkas naskah diunduh. Berkas yang tersimpan di server dan nama yang tampil di antarmuka editorial tidak berubah."
+msgstr "Pilih cara berkas naskah dinamai saat seseorang mengunduhnya. Berkas yang tersimpan di server dan nama yang tampil di antarmuka editorial tidak diubah."
 
 #, fuzzy
-msgid "plugins.generic.ojsbrFilenameRename.settings.numbersOnly.label"
-msgstr "Hanya angka — gunakan {submissionId}-{submissionFileId}.{ext} alih-alih submissao-{submissionId}-arquivo-{submissionFileId}.{ext}"
+msgid "plugins.generic.ojsbrFilenameRename.settings.format"
+msgstr "Format nama berkas"
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.format.descriptive"
+msgstr "Nama deskriptif: {$example}"
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.format.numbersOnly"
+msgstr "Hanya angka: {$example}"
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.language"
+msgstr "Bahasa nama deskriptif"
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.language.description"
+msgstr "Tidak berlaku untuk format hanya angka. Bahasa tanpa terjemahan ini menggunakan bahasa Inggris."
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.language.user"
+msgstr "Bahasa antarmuka pengunduh"
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.language.context"
+msgstr "Bahasa utama jurnal, {$language}: {$example}"
+
+#. File name delivered on download, without the extension. Keep both placeholders.
+#. Latin-script languages: lowercase letters without diacritics, digits and hyphens only.
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.filename.descriptive"
+msgstr "naskah-{$submissionId}-file-{$submissionFileId}"

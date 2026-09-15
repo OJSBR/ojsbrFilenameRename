@@ -1,25 +1,55 @@
 msgid ""
 msgstr ""
+"Project-Id-Version: ojsbrFilenameRename\n"
+"Last-Translator: OJSBR\n"
+"Language-Team: OJSBR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Last-Translator: OJSBR\n"
-"Language-Team: OJSBR\n"
 "Language: sl\n"
-
 
 #, fuzzy
 msgid "plugins.generic.ojsbrFilenameRename.displayName"
-msgstr "OJSBR — Preimenovanje datotek ob prenosu"
+msgstr "Preimenovanje Datotek ob Prenosu"
 
 #, fuzzy
 msgid "plugins.generic.ojsbrFilenameRename.description"
-msgstr "Zamenja ime datoteke, ki se dostavi ob prenosu. Privzeta oblika: submissao-{submissionId}-arquivo-{submissionFileId}.{ext}. Izbirno samo številke: {submissionId}-{submissionFileId}.{ext}. Datoteka na disku in ime v uredniškem vmesniku se ne spremenita."
+msgstr "Ob prenosu izroči datoteke rokopisa pod nevtralnim, poenotenim imenom, na primer rokopis-123-datoteka-456.pdf, v jeziku osebe, ki prenaša, ali revije, ali samo s številkami. Shranjena datoteka in ime v uredniškem vmesniku se ne spremenita."
 
 #, fuzzy
 msgid "plugins.generic.ojsbrFilenameRename.settings.description"
-msgstr "Izberite obliko imena datoteke, ki jo uporabnik prejme ob prenosu datoteke prijave. Datoteka, shranjena na strežniku, in ime v uredniškem vmesniku ostaneta nespremenjena."
+msgstr "Izberite, kako se poimenujejo datoteke rokopisa, ko jih nekdo prenese. Datoteka na strežniku in ime v uredniškem vmesniku se ne spremenita."
 
 #, fuzzy
-msgid "plugins.generic.ojsbrFilenameRename.settings.numbersOnly.label"
-msgstr "Samo številke — uporabi {submissionId}-{submissionFileId}.{ext} namesto submissao-{submissionId}-arquivo-{submissionFileId}.{ext}"
+msgid "plugins.generic.ojsbrFilenameRename.settings.format"
+msgstr "Oblika imena datoteke"
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.format.descriptive"
+msgstr "Opisno ime: {$example}"
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.format.numbersOnly"
+msgstr "Samo številke: {$example}"
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.language"
+msgstr "Jezik opisnega imena"
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.language.description"
+msgstr "Ne velja za obliko s samimi številkami. Jezik brez tega prevoda uporabi angleščino."
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.language.user"
+msgstr "Jezik vmesnika osebe, ki prenaša"
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.language.context"
+msgstr "Glavni jezik revije, {$language}: {$example}"
+
+#. File name delivered on download, without the extension. Keep both placeholders.
+#. Latin-script languages: lowercase letters without diacritics, digits and hyphens only.
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.filename.descriptive"
+msgstr "rokopis-{$submissionId}-datoteka-{$submissionFileId}"

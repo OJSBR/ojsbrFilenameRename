@@ -1,25 +1,55 @@
 msgid ""
 msgstr ""
+"Project-Id-Version: ojsbrFilenameRename\n"
+"Last-Translator: OJSBR\n"
+"Language-Team: OJSBR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Last-Translator: OJSBR\n"
-"Language-Team: OJSBR\n"
 "Language: ro\n"
-
 
 #, fuzzy
 msgid "plugins.generic.ojsbrFilenameRename.displayName"
-msgstr "OJSBR — Redenumirea fișierelor la descărcare"
+msgstr "Redenumirea Fișierelor la Descărcare"
 
 #, fuzzy
 msgid "plugins.generic.ojsbrFilenameRename.description"
-msgstr "Înlocuiește numele fișierului livrat la descărcare. Format implicit: submissao-{submissionId}-arquivo-{submissionFileId}.{ext}. Opțional, doar cifre: {submissionId}-{submissionFileId}.{ext}. Fișierul de pe disc și numele din interfața editorială nu se modifică."
+msgstr "Livrează fișierele manuscrisului sub un nume neutru și standardizat la descărcare, de exemplu manuscris-123-fisier-456.pdf, în limba persoanei care descarcă sau a revistei, ori doar cu numere. Fișierul stocat și numele afișat în interfața editorială nu se modifică."
 
 #, fuzzy
 msgid "plugins.generic.ojsbrFilenameRename.settings.description"
-msgstr "Alegeți formatul numelui de fișier trimis utilizatorului la descărcarea unui fișier al propunerii. Fișierul stocat pe server și numele afișat în interfața editorială rămân neschimbate."
+msgstr "Alegeți cum sunt denumite fișierele manuscrisului atunci când cineva le descarcă. Fișierul stocat pe server și numele afișat în interfața editorială nu se modifică."
 
 #, fuzzy
-msgid "plugins.generic.ojsbrFilenameRename.settings.numbersOnly.label"
-msgstr "Doar cifre — folosește {submissionId}-{submissionFileId}.{ext} în loc de submissao-{submissionId}-arquivo-{submissionFileId}.{ext}"
+msgid "plugins.generic.ojsbrFilenameRename.settings.format"
+msgstr "Formatul numelui de fișier"
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.format.descriptive"
+msgstr "Nume descriptiv: {$example}"
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.format.numbersOnly"
+msgstr "Doar numere: {$example}"
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.language"
+msgstr "Limba numelui descriptiv"
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.language.description"
+msgstr "Nu se aplică formatului doar cu numere. O limbă fără această traducere folosește engleza."
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.language.user"
+msgstr "Limba interfeței persoanei care descarcă"
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.language.context"
+msgstr "Limba principală a revistei, {$language}: {$example}"
+
+#. File name delivered on download, without the extension. Keep both placeholders.
+#. Latin-script languages: lowercase letters without diacritics, digits and hyphens only.
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.filename.descriptive"
+msgstr "manuscris-{$submissionId}-fisier-{$submissionFileId}"

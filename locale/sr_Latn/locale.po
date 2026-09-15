@@ -1,25 +1,55 @@
 msgid ""
 msgstr ""
+"Project-Id-Version: ojsbrFilenameRename\n"
+"Last-Translator: OJSBR\n"
+"Language-Team: OJSBR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Last-Translator: OJSBR\n"
-"Language-Team: OJSBR\n"
 "Language: sr_Latn\n"
-
 
 #, fuzzy
 msgid "plugins.generic.ojsbrFilenameRename.displayName"
-msgstr "OJSBR — Preimenovanje datoteka pri preuzimanju"
+msgstr "Preimenovanje Fajlova pri Preuzimanju"
 
 #, fuzzy
 msgid "plugins.generic.ojsbrFilenameRename.description"
-msgstr "Zamenjuje ime datoteke koje se isporučuje pri preuzimanju. Podrazumevani format: submissao-{submissionId}-arquivo-{submissionFileId}.{ext}. Opciono, samo brojevi: {submissionId}-{submissionFileId}.{ext}. Datoteka na disku i ime u uredničkom interfejsu se ne menjaju."
+msgstr "Pri preuzimanju isporučuje fajlove predaje pod neutralnim, ujednačenim imenom, na primer predaja-123-fajl-456.pdf, na jeziku osobe koja preuzima ili časopisa, ili samo sa brojevima. Sačuvani fajl i ime prikazano u uredničkom interfejsu se ne menjaju."
 
 #, fuzzy
 msgid "plugins.generic.ojsbrFilenameRename.settings.description"
-msgstr "Izaberite format imena datoteke koje se šalje korisniku pri preuzimanju datoteke priloga. Datoteka sačuvana na serveru i ime prikazano u uredničkom interfejsu ostaju nepromenjeni."
+msgstr "Izaberite kako se imenuju fajlovi predaje kada ih neko preuzme. Fajl sačuvan na serveru i ime prikazano u uredničkom interfejsu se ne menjaju."
 
 #, fuzzy
-msgid "plugins.generic.ojsbrFilenameRename.settings.numbersOnly.label"
-msgstr "Samo brojevi — koristi {submissionId}-{submissionFileId}.{ext} umesto submissao-{submissionId}-arquivo-{submissionFileId}.{ext}"
+msgid "plugins.generic.ojsbrFilenameRename.settings.format"
+msgstr "Format imena fajla"
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.format.descriptive"
+msgstr "Opisno ime: {$example}"
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.format.numbersOnly"
+msgstr "Samo brojevi: {$example}"
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.language"
+msgstr "Jezik opisnog imena"
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.language.description"
+msgstr "Ne važi za format sa samim brojevima. Jezik bez ovog prevoda koristi engleski."
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.language.user"
+msgstr "Jezik interfejsa osobe koja preuzima"
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.language.context"
+msgstr "Glavni jezik časopisa, {$language}: {$example}"
+
+#. File name delivered on download, without the extension. Keep both placeholders.
+#. Latin-script languages: lowercase letters without diacritics, digits and hyphens only.
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.filename.descriptive"
+msgstr "predaja-{$submissionId}-fajl-{$submissionFileId}"

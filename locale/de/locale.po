@@ -1,25 +1,44 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
-"Report-Msgid-Bugs-To: \n"
-"Last-Translator: OJSBR <eder@sotto.com.br>\n"
+"Project-Id-Version: ojsbrFilenameRename\n"
+"Last-Translator: OJSBR\n"
 "Language-Team: OJSBR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-07-16T00:00:00+00:00\n"
-"PO-Revision-Date: 2026-07-16T00:00:00+00:00\n"
 "Language: de\n"
 
-
 msgid "plugins.generic.ojsbrFilenameRename.displayName"
-msgstr "OJSBR — Dateien beim Download umbenennen"
+msgstr "Dateien beim Download umbenennen"
 
 msgid "plugins.generic.ojsbrFilenameRename.description"
-msgstr "Ersetzt den beim Download gelieferten Dateinamen. Standardformat: submissao-{submissionId}-arquivo-{submissionFileId}.{ext}. Optional nur Zahlen: {submissionId}-{submissionFileId}.{ext}. Die Datei auf dem Datenträger und der Name in der redaktionellen Oberfläche werden nicht geändert."
+msgstr "Liefert die Dateien einer Einreichung beim Download unter einem neutralen, einheitlichen Namen aus, zum Beispiel einreichung-123-datei-456.pdf, in der Sprache der herunterladenden Person oder der Zeitschrift, oder nur mit Zahlen. Die gespeicherte Datei und der in der redaktionellen Oberfläche angezeigte Name bleiben unverändert."
 
 msgid "plugins.generic.ojsbrFilenameRename.settings.description"
-msgstr "Wählen Sie das Format des Dateinamens, der an die Benutzer gesendet wird, wenn eine Einreichungsdatei heruntergeladen wird. Die auf dem Server gespeicherte Datei und der in der redaktionellen Oberfläche angezeigte Name bleiben unverändert."
+msgstr "Legen Sie fest, wie die Dateien einer Einreichung beim Herunterladen benannt werden. Die auf dem Server gespeicherte Datei und der in der redaktionellen Oberfläche angezeigte Name bleiben unverändert."
 
-msgid "plugins.generic.ojsbrFilenameRename.settings.numbersOnly.label"
-msgstr "Nur Zahlen — {submissionId}-{submissionFileId}.{ext} anstelle von submissao-{submissionId}-arquivo-{submissionFileId}.{ext} verwenden"
+msgid "plugins.generic.ojsbrFilenameRename.settings.format"
+msgstr "Format des Dateinamens"
+
+msgid "plugins.generic.ojsbrFilenameRename.settings.format.descriptive"
+msgstr "Beschreibender Name: {$example}"
+
+msgid "plugins.generic.ojsbrFilenameRename.settings.format.numbersOnly"
+msgstr "Nur Zahlen: {$example}"
+
+msgid "plugins.generic.ojsbrFilenameRename.settings.language"
+msgstr "Sprache des beschreibenden Namens"
+
+msgid "plugins.generic.ojsbrFilenameRename.settings.language.description"
+msgstr "Gilt nicht für das Format mit nur Zahlen. Eine Sprache ohne diese Übersetzung verwendet Englisch."
+
+msgid "plugins.generic.ojsbrFilenameRename.settings.language.user"
+msgstr "Oberflächensprache der herunterladenden Person"
+
+msgid "plugins.generic.ojsbrFilenameRename.settings.language.context"
+msgstr "Hauptsprache der Zeitschrift, {$language}: {$example}"
+
+#. File name delivered on download, without the extension. Keep both placeholders.
+#. Latin-script languages: lowercase letters without diacritics, digits and hyphens only.
+msgid "plugins.generic.ojsbrFilenameRename.filename.descriptive"
+msgstr "einreichung-{$submissionId}-datei-{$submissionFileId}"

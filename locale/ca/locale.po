@@ -1,21 +1,44 @@
 msgid ""
 msgstr ""
+"Project-Id-Version: ojsbrFilenameRename\n"
+"Last-Translator: OJSBR\n"
+"Language-Team: OJSBR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Last-Translator: OJSBR\n"
-"Language-Team: OJSBR\n"
 "Language: ca\n"
 
-
 msgid "plugins.generic.ojsbrFilenameRename.displayName"
-msgstr "OJSBR — Reanomena els fitxers en baixar-los"
+msgstr "Canvia el Nom dels Fitxers en Baixar-los"
 
 msgid "plugins.generic.ojsbrFilenameRename.description"
-msgstr "Substitueix el nom del fitxer lliurat en baixar-lo. Format per defecte: submissao-{submissionId}-arquivo-{submissionFileId}.{ext}. Opcionalment, només números: {submissionId}-{submissionFileId}.{ext}. Ni el fitxer del disc ni el nom de la interfície editorial no canvien."
+msgstr "Lliura els fitxers de la tramesa amb un nom neutre i normalitzat en baixar-los, com tramesa-123-fitxer-456.pdf, en la llengua de qui els baixa o de la revista, o només amb números. El fitxer emmagatzemat i el nom que es mostra a la interfície editorial no canvien."
 
 msgid "plugins.generic.ojsbrFilenameRename.settings.description"
-msgstr "Trieu el format del nom del fitxer que s'envia a l'usuari quan es baixa un fitxer d'una tramesa. El fitxer emmagatzemat al servidor i el nom que es mostra a la interfície editorial no canvien."
+msgstr "Trieu com s'anomenen els fitxers de la tramesa quan algú els baixa. El fitxer emmagatzemat al servidor i el nom que es mostra a la interfície editorial no canvien."
 
-msgid "plugins.generic.ojsbrFilenameRename.settings.numbersOnly.label"
-msgstr "Només números — utilitza {submissionId}-{submissionFileId}.{ext} en lloc de submissao-{submissionId}-arquivo-{submissionFileId}.{ext}"
+msgid "plugins.generic.ojsbrFilenameRename.settings.format"
+msgstr "Format del nom del fitxer"
+
+msgid "plugins.generic.ojsbrFilenameRename.settings.format.descriptive"
+msgstr "Nom descriptiu: {$example}"
+
+msgid "plugins.generic.ojsbrFilenameRename.settings.format.numbersOnly"
+msgstr "Només números: {$example}"
+
+msgid "plugins.generic.ojsbrFilenameRename.settings.language"
+msgstr "Llengua del nom descriptiu"
+
+msgid "plugins.generic.ojsbrFilenameRename.settings.language.description"
+msgstr "No s'aplica al format de només números. Una llengua sense aquesta traducció fa servir l'anglès."
+
+msgid "plugins.generic.ojsbrFilenameRename.settings.language.user"
+msgstr "Llengua de la interfície de qui baixa el fitxer"
+
+msgid "plugins.generic.ojsbrFilenameRename.settings.language.context"
+msgstr "Llengua principal de la revista, {$language}: {$example}"
+
+#. File name delivered on download, without the extension. Keep both placeholders.
+#. Latin-script languages: lowercase letters without diacritics, digits and hyphens only.
+msgid "plugins.generic.ojsbrFilenameRename.filename.descriptive"
+msgstr "tramesa-{$submissionId}-fitxer-{$submissionFileId}"

@@ -1,25 +1,44 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
-"Report-Msgid-Bugs-To: \n"
-"Last-Translator: OJSBR <eder@sotto.com.br>\n"
+"Project-Id-Version: ojsbrFilenameRename\n"
+"Last-Translator: OJSBR\n"
 "Language-Team: OJSBR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-07-16T00:00:00+00:00\n"
-"PO-Revision-Date: 2026-07-16T00:00:00+00:00\n"
 "Language: it\n"
 
-
 msgid "plugins.generic.ojsbrFilenameRename.displayName"
-msgstr "OJSBR — Rinomina i file al download"
+msgstr "Rinomina i File al Download"
 
 msgid "plugins.generic.ojsbrFilenameRename.description"
-msgstr "Sostituisce il nome del file fornito durante il download. Formato predefinito: submissao-{submissionId}-arquivo-{submissionFileId}.{ext}. In alternativa, solo numeri: {submissionId}-{submissionFileId}.{ext}. Il file su disco e il nome nell'interfaccia editoriale non vengono modificati."
+msgstr "Consegna i file della proposta con un nome neutro e uniforme al download, ad esempio proposta-123-file-456.pdf, nella lingua di chi scarica o della rivista, oppure solo con numeri. Il file archiviato e il nome mostrato nell'interfaccia editoriale non vengono modificati."
 
 msgid "plugins.generic.ojsbrFilenameRename.settings.description"
-msgstr "Scegli il formato del nome del file inviato all'utente quando viene scaricato un file di una proposta. Il file archiviato sul server e il nome mostrato nell'interfaccia editoriale rimangono invariati."
+msgstr "Scegli come vengono nominati i file della proposta quando qualcuno li scarica. Il file archiviato sul server e il nome mostrato nell'interfaccia editoriale non vengono modificati."
 
-msgid "plugins.generic.ojsbrFilenameRename.settings.numbersOnly.label"
-msgstr "Solo numeri — usa {submissionId}-{submissionFileId}.{ext} invece di submissao-{submissionId}-arquivo-{submissionFileId}.{ext}"
+msgid "plugins.generic.ojsbrFilenameRename.settings.format"
+msgstr "Formato del nome del file"
+
+msgid "plugins.generic.ojsbrFilenameRename.settings.format.descriptive"
+msgstr "Nome descrittivo: {$example}"
+
+msgid "plugins.generic.ojsbrFilenameRename.settings.format.numbersOnly"
+msgstr "Solo numeri: {$example}"
+
+msgid "plugins.generic.ojsbrFilenameRename.settings.language"
+msgstr "Lingua del nome descrittivo"
+
+msgid "plugins.generic.ojsbrFilenameRename.settings.language.description"
+msgstr "Non si applica al formato con soli numeri. Una lingua senza questa traduzione usa l'inglese."
+
+msgid "plugins.generic.ojsbrFilenameRename.settings.language.user"
+msgstr "Lingua dell'interfaccia di chi scarica"
+
+msgid "plugins.generic.ojsbrFilenameRename.settings.language.context"
+msgstr "Lingua principale della rivista, {$language}: {$example}"
+
+#. File name delivered on download, without the extension. Keep both placeholders.
+#. Latin-script languages: lowercase letters without diacritics, digits and hyphens only.
+msgid "plugins.generic.ojsbrFilenameRename.filename.descriptive"
+msgstr "proposta-{$submissionId}-file-{$submissionFileId}"

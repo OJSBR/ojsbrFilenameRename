@@ -1,25 +1,55 @@
 msgid ""
 msgstr ""
+"Project-Id-Version: ojsbrFilenameRename\n"
+"Last-Translator: OJSBR\n"
+"Language-Team: OJSBR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Last-Translator: OJSBR\n"
-"Language-Team: OJSBR\n"
 "Language: hy\n"
-
 
 #, fuzzy
 msgid "plugins.generic.ojsbrFilenameRename.displayName"
-msgstr "OJSBR — Վերանվանել ֆայլերը ներբեռնելիս"
+msgstr "Ֆայլերի Վերանվանում Ներբեռնելիս"
 
 #, fuzzy
 msgid "plugins.generic.ojsbrFilenameRename.description"
-msgstr "Փոխարինում է ներբեռնման ժամանակ տրվող ֆայլի անունը։ Կանխադրված ձևաչափ՝ submissao-{submissionId}-arquivo-{submissionFileId}.{ext}։ Ընտրովի՝ միայն թվեր՝ {submissionId}-{submissionFileId}.{ext}։ Սկավառակի ֆայլը և խմբագրական միջերեսի անունը չեն փոխվում։"
+msgstr "Ներբեռնելիս ներկայացման ֆայլերը տրամադրում է չեզոք, միասնական անունով, օրինակ՝ ներկայացում-123-ֆայլ-456.pdf, ներբեռնողի կամ ամսագրի լեզվով, կամ միայն թվերով։ Պահված ֆայլը և խմբագրական միջերեսում ցուցադրվող անունը չեն փոխվում։"
 
 #, fuzzy
 msgid "plugins.generic.ojsbrFilenameRename.settings.description"
-msgstr "Ընտրեք ֆայլի անվան ձևաչափը, որը ուղարկվում է օգտվողին ներկայացման ֆայլը ներբեռնելիս։ Սերվերում պահվող ֆայլը և խմբագրական միջերեսում ցուցադրվող անունը մնում են անփոփոխ։"
+msgstr "Ընտրեք, թե ինչպես անվանել ներկայացման ֆայլերը, երբ որևէ մեկը դրանք ներբեռնում է։ Սերվերում պահված ֆայլը և խմբագրական միջերեսում ցուցադրվող անունը չեն փոխվում։"
 
 #, fuzzy
-msgid "plugins.generic.ojsbrFilenameRename.settings.numbersOnly.label"
-msgstr "Միայն թվեր — օգտագործել {submissionId}-{submissionFileId}.{ext}՝ submissao-{submissionId}-arquivo-{submissionFileId}.{ext}-ի փոխարեն"
+msgid "plugins.generic.ojsbrFilenameRename.settings.format"
+msgstr "Ֆայլի անվան ձևաչափ"
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.format.descriptive"
+msgstr "Նկարագրական անուն՝ {$example}"
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.format.numbersOnly"
+msgstr "Միայն թվեր՝ {$example}"
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.language"
+msgstr "Նկարագրական անվան լեզուն"
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.language.description"
+msgstr "Չի վերաբերում միայն թվերով ձևաչափին։ Այս թարգմանությունը չունեցող լեզուն օգտագործում է անգլերենը։"
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.language.user"
+msgstr "Ներբեռնողի միջերեսի լեզուն"
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.language.context"
+msgstr "Ամսագրի հիմնական լեզուն՝ {$language}՝ {$example}"
+
+#. File name delivered on download, without the extension. Keep both placeholders.
+#. Latin-script languages: lowercase letters without diacritics, digits and hyphens only.
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.filename.descriptive"
+msgstr "ներկայացում-{$submissionId}-ֆայլ-{$submissionFileId}"

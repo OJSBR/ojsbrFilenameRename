@@ -1,25 +1,55 @@
 msgid ""
 msgstr ""
+"Project-Id-Version: ojsbrFilenameRename\n"
+"Last-Translator: OJSBR\n"
+"Language-Team: OJSBR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Last-Translator: OJSBR\n"
-"Language-Team: OJSBR\n"
 "Language: ru\n"
-
 
 #, fuzzy
 msgid "plugins.generic.ojsbrFilenameRename.displayName"
-msgstr "OJSBR — Переименование файлов при скачивании"
+msgstr "Переименование Файлов при Скачивании"
 
 #, fuzzy
 msgid "plugins.generic.ojsbrFilenameRename.description"
-msgstr "Заменяет имя файла, выдаваемое при скачивании. Формат по умолчанию: submissao-{submissionId}-arquivo-{submissionFileId}.{ext}. При желании только цифры: {submissionId}-{submissionFileId}.{ext}. Файл на диске и имя в редакционном интерфейсе не изменяются."
+msgstr "При скачивании выдаёт файлы материала под нейтральным единообразным именем, например материал-123-файл-456.pdf, на языке скачивающего или журнала либо только цифрами. Сохранённый файл и имя в редакционном интерфейсе не меняются."
 
 #, fuzzy
 msgid "plugins.generic.ojsbrFilenameRename.settings.description"
-msgstr "Выберите формат имени файла, которое получает пользователь при скачивании файла подачи. Файл на сервере и имя в редакционном интерфейсе остаются прежними."
+msgstr "Выберите, как называть файлы материала, когда их скачивают. Файл на сервере и имя в редакционном интерфейсе не меняются."
 
 #, fuzzy
-msgid "plugins.generic.ojsbrFilenameRename.settings.numbersOnly.label"
-msgstr "Только цифры — использовать {submissionId}-{submissionFileId}.{ext} вместо submissao-{submissionId}-arquivo-{submissionFileId}.{ext}"
+msgid "plugins.generic.ojsbrFilenameRename.settings.format"
+msgstr "Формат имени файла"
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.format.descriptive"
+msgstr "Описательное имя: {$example}"
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.format.numbersOnly"
+msgstr "Только цифры: {$example}"
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.language"
+msgstr "Язык описательного имени"
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.language.description"
+msgstr "Не относится к формату только из цифр. Язык без этого перевода использует английский."
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.language.user"
+msgstr "Язык интерфейса скачивающего"
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.language.context"
+msgstr "Основной язык журнала, {$language}: {$example}"
+
+#. File name delivered on download, without the extension. Keep both placeholders.
+#. Latin-script languages: lowercase letters without diacritics, digits and hyphens only.
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.filename.descriptive"
+msgstr "материал-{$submissionId}-файл-{$submissionFileId}"

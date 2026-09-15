@@ -1,21 +1,44 @@
 msgid ""
 msgstr ""
+"Project-Id-Version: ojsbrFilenameRename\n"
+"Last-Translator: OJSBR\n"
+"Language-Team: OJSBR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Last-Translator: OJSBR\n"
-"Language-Team: OJSBR\n"
 "Language: nl\n"
 
-
 msgid "plugins.generic.ojsbrFilenameRename.displayName"
-msgstr "OJSBR — Bestanden hernoemen bij downloaden"
+msgstr "Bestanden Hernoemen bij Downloaden"
 
 msgid "plugins.generic.ojsbrFilenameRename.description"
-msgstr "Vervangt de bestandsnaam die bij het downloaden wordt geleverd. Standaardindeling: submissao-{submissionId}-arquivo-{submissionFileId}.{ext}. Optioneel alleen cijfers: {submissionId}-{submissionFileId}.{ext}. Het bestand op schijf en de naam in de redactionele interface veranderen niet."
+msgstr "Levert de bestanden van een inzending bij het downloaden onder een neutrale, gestandaardiseerde naam, zoals inzending-123-bestand-456.pdf, in de taal van degene die downloadt of van het tijdschrift, of alleen met cijfers. Het opgeslagen bestand en de naam in de redactionele interface blijven ongewijzigd."
 
 msgid "plugins.generic.ojsbrFilenameRename.settings.description"
-msgstr "Kies de indeling van de bestandsnaam die de gebruiker krijgt bij het downloaden van een inzendingsbestand. Het bestand op de server en de naam in de redactionele interface blijven ongewijzigd."
+msgstr "Kies hoe de bestanden van een inzending worden genoemd wanneer iemand ze downloadt. Het bestand op de server en de naam in de redactionele interface blijven ongewijzigd."
 
-msgid "plugins.generic.ojsbrFilenameRename.settings.numbersOnly.label"
-msgstr "Alleen cijfers — gebruik {submissionId}-{submissionFileId}.{ext} in plaats van submissao-{submissionId}-arquivo-{submissionFileId}.{ext}"
+msgid "plugins.generic.ojsbrFilenameRename.settings.format"
+msgstr "Indeling van de bestandsnaam"
+
+msgid "plugins.generic.ojsbrFilenameRename.settings.format.descriptive"
+msgstr "Beschrijvende naam: {$example}"
+
+msgid "plugins.generic.ojsbrFilenameRename.settings.format.numbersOnly"
+msgstr "Alleen cijfers: {$example}"
+
+msgid "plugins.generic.ojsbrFilenameRename.settings.language"
+msgstr "Taal van de beschrijvende naam"
+
+msgid "plugins.generic.ojsbrFilenameRename.settings.language.description"
+msgstr "Geldt niet voor de indeling met alleen cijfers. Een taal zonder deze vertaling gebruikt Engels."
+
+msgid "plugins.generic.ojsbrFilenameRename.settings.language.user"
+msgstr "Interfacetaal van degene die downloadt"
+
+msgid "plugins.generic.ojsbrFilenameRename.settings.language.context"
+msgstr "Hoofdtaal van het tijdschrift, {$language}: {$example}"
+
+#. File name delivered on download, without the extension. Keep both placeholders.
+#. Latin-script languages: lowercase letters without diacritics, digits and hyphens only.
+msgid "plugins.generic.ojsbrFilenameRename.filename.descriptive"
+msgstr "inzending-{$submissionId}-bestand-{$submissionFileId}"

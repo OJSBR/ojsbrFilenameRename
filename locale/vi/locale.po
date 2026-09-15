@@ -1,25 +1,55 @@
 msgid ""
 msgstr ""
+"Project-Id-Version: ojsbrFilenameRename\n"
+"Last-Translator: OJSBR\n"
+"Language-Team: OJSBR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Last-Translator: OJSBR\n"
-"Language-Team: OJSBR\n"
 "Language: vi\n"
-
 
 #, fuzzy
 msgid "plugins.generic.ojsbrFilenameRename.displayName"
-msgstr "OJSBR — Đổi tên tệp khi tải xuống"
+msgstr "Đổi Tên Tệp khi Tải Xuống"
 
 #, fuzzy
 msgid "plugins.generic.ojsbrFilenameRename.description"
-msgstr "Thay thế tên tệp được cung cấp khi tải xuống. Định dạng mặc định: submissao-{submissionId}-arquivo-{submissionFileId}.{ext}. Tùy chọn chỉ số: {submissionId}-{submissionFileId}.{ext}. Tệp trên đĩa và tên trong giao diện biên tập không thay đổi."
+msgstr "Cung cấp các tệp của bài nộp với tên trung lập, thống nhất khi tải xuống, ví dụ bai-nop-123-tep-456.pdf, bằng ngôn ngữ của người tải xuống hoặc của tạp chí, hoặc chỉ gồm số. Tệp đã lưu và tên hiển thị trong giao diện biên tập không thay đổi."
 
 #, fuzzy
 msgid "plugins.generic.ojsbrFilenameRename.settings.description"
-msgstr "Chọn định dạng tên tệp được gửi tới người dùng khi tải xuống tệp của bài nộp. Tệp lưu trên máy chủ và tên hiển thị trong giao diện biên tập vẫn giữ nguyên."
+msgstr "Chọn cách đặt tên cho các tệp của bài nộp khi có người tải xuống. Tệp lưu trên máy chủ và tên hiển thị trong giao diện biên tập không thay đổi."
 
 #, fuzzy
-msgid "plugins.generic.ojsbrFilenameRename.settings.numbersOnly.label"
-msgstr "Chỉ số — dùng {submissionId}-{submissionFileId}.{ext} thay cho submissao-{submissionId}-arquivo-{submissionFileId}.{ext}"
+msgid "plugins.generic.ojsbrFilenameRename.settings.format"
+msgstr "Định dạng tên tệp"
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.format.descriptive"
+msgstr "Tên mô tả: {$example}"
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.format.numbersOnly"
+msgstr "Chỉ gồm số: {$example}"
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.language"
+msgstr "Ngôn ngữ của tên mô tả"
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.language.description"
+msgstr "Không áp dụng cho định dạng chỉ gồm số. Ngôn ngữ chưa có bản dịch này sẽ dùng tiếng Anh."
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.language.user"
+msgstr "Ngôn ngữ giao diện của người tải xuống"
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.language.context"
+msgstr "Ngôn ngữ chính của tạp chí, {$language}: {$example}"
+
+#. File name delivered on download, without the extension. Keep both placeholders.
+#. Latin-script languages: lowercase letters without diacritics, digits and hyphens only.
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.filename.descriptive"
+msgstr "bai-nop-{$submissionId}-tep-{$submissionFileId}"

@@ -3,32 +3,28 @@
 /**
  * @file plugins/generic/ojsbrFilenameRename/OjsbrFilenameRenamePlugin.php
  *
+ * Copyright (c) 2026 OJSBR (https://ojsbr.com)
+ * Distributed under the GNU GPL v3. For full terms see the file docs/COPYING.
+ *
  * @class OjsbrFilenameRenamePlugin
  *
  * @ingroup plugins_generic_ojsbrFilenameRename
  *
- * @brief Plugin OJSBR - renomeia o arquivo entregue ao usuario no momento
- *        do download.
- *
- *        Modos (configuravel por revista nas Configuracoes do plugin):
- *
- *          - Modo padrao (numbersOnly = 0):
- *                submissao-{submissionId}-arquivo-{submissionFileId}.{ext}
- *
- *          - Somente numeros (numbersOnly = 1):
- *                {submissionId}-{submissionFileId}.{ext}
- *
- *        Funciona via hook nativo File::download do PKPFileService,
- *        sem patch no core. Nao altera o arquivo no disco nem o nome
- *        exibido na interface editorial. Compatibilidade: OJS/OPS 3.5.x.
+ * @brief Renames the file delivered on download to a neutral, standardized
+ *  name, without touching the stored file or the name shown in the editorial
+ *  interface. The descriptive name is translatable, so it follows the language
+ *  of the person downloading or the primary language of the journal.
  */
 
 namespace APP\plugins\generic\ojsbrFilenameRename;
 
 use APP\core\Application;
 use Illuminate\Support\Facades\DB;
-use PKP\config\Config;
+use PKP\context\Context;
 use PKP\core\JSONMessage;
+use PKP\core\PKPPageRouter;
+use PKP\core\PKPRequest;
+use PKP\facades\Locale;
 use PKP\linkAction\LinkAction;
 use PKP\linkAction\request\AjaxModal;
 use PKP\plugins\GenericPlugin;
@@ -36,39 +32,52 @@ use PKP\plugins\Hook;
 
 class OjsbrFilenameRenamePlugin extends GenericPlugin
 {
+    /** Setting: deliver only numbers instead of the descriptive name. */
+    public const SETTING_NUMBERS_ONLY = 'numbersOnly';
+
+    /** Setting: which language the descriptive name is written in. */
+    public const SETTING_FILENAME_LOCALE = 'filenameLocale';
+
+    /** Descriptive name in the interface language of the person downloading. */
+    public const FILENAME_LOCALE_USER = 'user';
+
+    /** Descriptive name in the primary language of the journal. */
+    public const FILENAME_LOCALE_CONTEXT = 'context';
+
+    /** Locale key holding the descriptive name pattern. */
+    public const FILENAME_KEY = 'plugins.generic.ojsbrFilenameRename.filename.descriptive';
+
+    /** Longest file name stem delivered, in characters. */
+    public const MAX_STEM_LENGTH = 150;
+
     /**
      * @copydoc Plugin::register()
+     *
+     * @param null|mixed $mainContextId
      */
     public function register($category, $path, $mainContextId = null)
     {
-        $success = parent::register($category, $path, $mainContextId);
-
-        // Nao registra durante instalacao/upgrade
-        if (!Config::getVar('general', 'installed') || defined('RUNNING_UPGRADE')) {
-            return $success;
+        if (!parent::register($category, $path, $mainContextId)) {
+            return false;
         }
 
-        if ($success && $this->getEnabled($mainContextId)) {
-            // Hook chamado em PKPFileService::download(), no momento em
-            // que o nome do arquivo entregue ao usuario e definido.
-            //
-            // Assinatura interna (3.5):
-            //   Hook::call('File::download', [$file, &$filename, $inline])
-            //
-            // Onde:
-            //   $file      stdClass {file_id, path, mimetype}   (linha da tabela `files`)
-            //   $filename  string                                (passado por referencia)
-            //   $inline    bool
-            Hook::add('File::download', [$this, 'renameOnDownload']);
+        // Do not touch the database while the system is being installed or upgraded.
+        if (Application::isUnderMaintenance()) {
+            return true;
         }
 
-        return $success;
+        if ($this->getEnabled($mainContextId)) {
+            // Called by PKPFileService::download() right before the headers are
+            // sent: Hook::call('File::download', [$file, &$filename, $inline]).
+            Hook::add('File::download', $this->renameOnDownload(...));
+        }
+
+        return true;
     }
 
     /**
-     * Nome estavel do plugin no registry e nas URLs do gerenciador.
-     * Com namespace, o getName() padrao retorna o FQCN em lower, que
-     * nao bate com o que vai pela URL. Forcamos o nome curto da classe.
+     * Keep the historical registry name: plugin settings of existing
+     * installations are stored under it.
      *
      * @copydoc Plugin::getName()
      */
@@ -94,38 +103,30 @@ class OjsbrFilenameRenamePlugin extends GenericPlugin
     }
 
     /**
-     * Adiciona botao "Settings" na linha do plugin (configuracao por revista).
-     *
      * @copydoc Plugin::getActions()
      */
-    public function getActions($request, $verb)
+    public function getActions($request, $actionArgs)
     {
-        $actions = parent::getActions($request, $verb);
+        $actions = parent::getActions($request, $actionArgs);
         if (!$this->getEnabled()) {
             return $actions;
         }
+
         $router = $request->getRouter();
-        $linkAction = new LinkAction(
+        array_unshift($actions, new LinkAction(
             'settings',
             new AjaxModal(
-                $router->url(
-                    $request,
-                    null,
-                    null,
-                    'manage',
-                    null,
-                    [
-                        'verb' => 'settings',
-                        'plugin' => $this->getName(),
-                        'category' => 'generic',
-                    ]
-                ),
+                $router->url($request, null, null, 'manage', null, [
+                    'verb' => 'settings',
+                    'plugin' => $this->getName(),
+                    'category' => 'generic',
+                ]),
                 $this->getDisplayName()
             ),
             __('manager.plugins.settings'),
             null
-        );
-        array_unshift($actions, $linkAction);
+        ));
+
         return $actions;
     }
 
@@ -143,7 +144,7 @@ class OjsbrFilenameRenamePlugin extends GenericPlugin
             return new JSONMessage(false);
         }
 
-        $form = new OjsbrFilenameRenameSettingsForm($this, $context->getId());
+        $form = new OjsbrFilenameRenameSettingsForm($this, $context);
 
         if ($request->getUserVar('save')) {
             $form->readInputData();
@@ -154,120 +155,175 @@ class OjsbrFilenameRenamePlugin extends GenericPlugin
         } else {
             $form->initData();
         }
+
         return new JSONMessage(true, $form->fetch($request));
     }
 
     /**
-     * Hook handler para File::download.
+     * Replace the name of a submission file delivered on download.
      *
-     * Substitui o nome do arquivo entregue ao cliente HTTP. O formato
-     * depende do setting `numbersOnly` configurado para a revista atual:
+     * Files that do not belong to a submission (library files, issue galleys,
+     * ...) are left untouched.
      *
-     *   numbersOnly = 0 (padrao):
-     *     submissao-{submissionId}-arquivo-{submissionFileId}.{ext}
-     *
-     *   numbersOnly = 1:
-     *     {submissionId}-{submissionFileId}.{ext}
-     *
-     * Nada e alterado no disco nem em qualquer tabela; apenas o
-     * Content-Disposition do response e ajustado em tempo de execucao.
-     *
-     * @param string $hookName
-     * @param array  $args     [$file, &$filename, $inline]
-     *
-     * @return bool false para nao interromper a cadeia de hooks
+     * @param array $args [stdClass $file, string &$filename, bool $inline]
      */
-    public function renameOnDownload($hookName, $args)
+    public function renameOnDownload(string $hookName, array $args): bool
     {
-        // $file vem da tabela `files` (id, path, mimetype). Em alguns
-        // caminhos do core o objeto e passado como stdClass; em outros
-        // como instancia de PKP\file\File. Tratamos os dois casos.
         $file = $args[0] ?? null;
-        if (!$file) {
-            return false;
-        }
-
-        $fileId = null;
-        if (is_object($file)) {
-            if (isset($file->file_id)) {
-                $fileId = (int) $file->file_id;
-            } elseif (isset($file->id)) {
-                $fileId = (int) $file->id;
-            } elseif (method_exists($file, 'getId')) {
-                $fileId = (int) $file->getId();
-            }
-        }
+        $fileId = is_object($file) ? (int) ($file->id ?? $file->file_id ?? 0) : 0;
         if (!$fileId) {
-            return false;
+            return Hook::CONTINUE;
         }
 
-        // Procura o submission_file ligado a este file_id.
-        // Um mesmo file_id pode ter mais de um submission_file
-        // (revisoes ao longo do fluxo editorial); pegamos o mais recente.
-        $row = DB::table('submission_files')
+        // One stored file may be shared by several submission files of the same
+        // submission (copies between workflow stages).
+        $rows = DB::table('submission_files')
             ->where('file_id', '=', $fileId)
             ->orderByDesc('submission_file_id')
-            ->select(['submission_file_id', 'submission_id'])
-            ->first();
-
+            ->get(['submission_file_id', 'submission_id'])
+            ->all();
+        $request = Application::get()->getRequest();
+        $row = self::pickSubmissionFile($rows, self::requestedSubmissionFileIds($request));
         if (!$row) {
-            return false;
+            return Hook::CONTINUE;
         }
 
-        // Extensao a partir do filename original recebido no hook.
-        $ext = '';
-        $original = $args[1] ?? '';
-        if ($original !== '' && ($pos = strrpos($original, '.')) !== false) {
-            $ext = substr($original, $pos);
-        }
-        // Fallback: tenta pegar a extensao do caminho fisico do arquivo.
-        if ($ext === '' && is_object($file) && !empty($file->path)) {
-            $pinfo = pathinfo($file->path);
-            if (!empty($pinfo['extension'])) {
-                $ext = '.' . $pinfo['extension'];
-            }
-        }
+        $context = $request->getContext();
+        $contextId = $context?->getId();
+        $numbersOnly = $contextId ? (bool) $this->getSetting($contextId, self::SETTING_NUMBERS_ONLY) : false;
+        $localeMode = $contextId ? $this->getSetting($contextId, self::SETTING_FILENAME_LOCALE) : null;
 
-        // Decide o formato pelo setting da revista atual.
-        $args[1] = sprintf(
-            $this->getFilenameTemplate(),
+        $args[1] = $this->buildFilename(
             (int) $row->submission_id,
             (int) $row->submission_file_id,
-            $ext
+            self::extractExtension($file->path ?? null, $args[1] ?? null),
+            $numbersOnly,
+            $this->resolveLocale($localeMode, $context)
         );
 
-        return false;
+        return Hook::CONTINUE;
     }
 
     /**
-     * Le o setting `numbersOnly` do contexto atual e retorna o
-     * template de sprintf a ser usado.
+     * Submission file ids the request names: the workflow passes
+     * ?submissionFileId=, the article download route carries it in the path
+     * (article/download/{submissionId}/{galleyId}/{submissionFileId}).
      *
-     * @return string sprintf template com 3 placeholders (%d, %d, %s)
+     * @return int[]
      */
-    protected function getFilenameTemplate()
+    public static function requestedSubmissionFileIds(PKPRequest $request): array
     {
-        $numbersOnly = false;
+        // Only the page router has path arguments; asking the component router
+        // used by the workflow for them throws.
+        $args = $request->getRouter() instanceof PKPPageRouter ? $request->getRequestedArgs() : [];
+        $lastArg = (string) end($args);
+        $ids = [(int) $request->getUserVar('submissionFileId'), ctype_digit($lastArg) ? (int) $lastArg : 0];
+        return array_values(array_unique(array_filter($ids)));
+    }
 
-        $request = Application::get()->getRequest();
-        $context = $request ? $request->getContext() : null;
-        if ($context) {
-            $numbersOnly = (bool) $this->getSetting($context->getId(), 'numbersOnly');
+    /**
+     * Choose the submission file the person asked for among those sharing
+     * the stored file; without a match, the newest one.
+     *
+     * @param object[] $rows Rows with submission_file_id and submission_id, newest first
+     * @param int[] $requestedIds In order of preference
+     */
+    public static function pickSubmissionFile(array $rows, array $requestedIds): ?object
+    {
+        foreach ($requestedIds as $id) {
+            foreach ($rows as $row) {
+                if ((int) $row->submission_file_id === $id) {
+                    return $row;
+                }
+            }
+        }
+        return $rows[0] ?? null;
+    }
+
+    /**
+     * Build the delivered file name.
+     *
+     * @param string $extension Extension with its leading dot, or ''
+     * @param ?string $locale Locale of the descriptive name; null = current locale
+     */
+    public function buildFilename(int $submissionId, int $submissionFileId, string $extension, bool $numbersOnly, ?string $locale = null): string
+    {
+        $numbers = $submissionId . '-' . $submissionFileId;
+        if ($numbersOnly) {
+            return $numbers . $extension;
         }
 
-        return $numbersOnly
-            ? '%d-%d%s'
-            : 'submissao-%d-arquivo-%d%s';
+        $params = ['submissionId' => $submissionId, 'submissionFileId' => $submissionFileId];
+        foreach (array_unique(array_filter([$locale ?? Locale::getLocale(), 'en'])) as $candidate) {
+            $stem = self::sanitizeStem($this->translateFilename($params, $candidate));
+            if (self::isValidStem($stem, $submissionId, $submissionFileId)) {
+                return $stem . $extension;
+            }
+        }
+
+        // No usable translation at all: never deliver "##key##".
+        return $numbers . $extension;
+    }
+
+    /**
+     * Translate the descriptive name pattern. A missing translation comes
+     * back as "##key##", which the caller rejects.
+     */
+    protected function translateFilename(array $params, string $locale): string
+    {
+        return __(self::FILENAME_KEY, $params, $locale);
+    }
+
+    /**
+     * Locale of the descriptive name for the given setting value.
+     */
+    public function resolveLocale(?string $localeMode, ?Context $context): string
+    {
+        if ($localeMode === self::FILENAME_LOCALE_CONTEXT && $context) {
+            return $context->getPrimaryLocale();
+        }
+        return Locale::getLocale();
+    }
+
+    /**
+     * Extension to keep, taken from the stored path first (it is generated by
+     * the application) and from the offered name as a fallback.
+     *
+     * @return string The extension with its leading dot, or ''
+     */
+    public static function extractExtension(?string $path, ?string $filename): string
+    {
+        foreach ([$path, $filename] as $candidate) {
+            if ($candidate && preg_match('/(?:\.tar)?\.[A-Za-z0-9]{1,10}$/', $candidate, $matches)) {
+                return strtolower($matches[0]);
+            }
+        }
+        return '';
+    }
+
+    /**
+     * Turn a translated name into a safe file name stem: no path separators,
+     * reserved or control characters, whitespace collapsed into hyphens.
+     */
+    public static function sanitizeStem(string $stem): string
+    {
+        $stem = preg_replace('/[\s\x00-\x1F\x7F\/\\\\:*?"<>|#%]+/u', '-', $stem) ?? '';
+        $stem = preg_replace('/-{2,}/', '-', $stem) ?? '';
+        $stem = trim($stem, '-. ');
+        return mb_substr($stem, 0, self::MAX_STEM_LENGTH);
+    }
+
+    /**
+     * A translated stem is only usable when it still carries both numbers.
+     */
+    public static function isValidStem(string $stem, int $submissionId, int $submissionFileId): bool
+    {
+        return $stem !== ''
+            && preg_match('/(?<!\d)' . $submissionId . '(?!\d)/', $stem)
+            && preg_match('/(?<!\d)' . $submissionFileId . '(?!\d)/', $stem);
     }
 }
 
-// Compatibilidade legacy do OJS 3.4: o registry procura a classe pelo
-// nome curto sem namespace. Quando PKP_STRICT_MODE nao esta ativo,
-// criamos um alias para que `OjsbrFilenameRenamePlugin` (sem namespace)
-// resolva para a classe namespaced.
 if (!PKP_STRICT_MODE) {
-    class_alias(
-        '\APP\plugins\generic\ojsbrFilenameRename\OjsbrFilenameRenamePlugin',
-        '\OjsbrFilenameRenamePlugin'
-    );
+    class_alias('\APP\plugins\generic\ojsbrFilenameRename\OjsbrFilenameRenamePlugin', '\OjsbrFilenameRenamePlugin');
 }

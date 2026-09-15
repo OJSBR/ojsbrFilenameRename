@@ -1,10 +1,10 @@
 # Rename Files on Download — OJS plugin
 
 [![OJS](https://img.shields.io/badge/OJS-3.4%20%7C%203.5-brightgreen)](https://pkp.sfu.ca/ojs/)
-[![Version](https://img.shields.io/badge/version-1.2.0.0-blue)](version.xml)
+[![Version](https://img.shields.io/badge/version-1.2.0.1-blue)](version.xml)
 [![License](https://img.shields.io/badge/license-GPL--3.0-lightgrey)](LICENSE)
 
-**⬇️ Install package:** [OJS 3.5](https://github.com/OJSBR/ojsbrFilenameRename/releases/download/1.2.0.0/ojsbrFilenameRename-1.2.0.0.tar.gz) · [OJS 3.4](https://github.com/OJSBR/ojsbrFilenameRename/releases/download/1.2.0.0-ojs3.4/ojsbrFilenameRename-1.2.0.0-ojs3.4.tar.gz) — or browse all [Releases](../../releases).
+**⬇️ Install package:** [OJS 3.5](https://github.com/OJSBR/ojsbrFilenameRename/releases/download/1.2.0.1/ojsbrFilenameRename-1.2.0.1.tar.gz) · [OJS 3.4](https://github.com/OJSBR/ojsbrFilenameRename/releases/download/1.2.0.1-ojs3.4/ojsbrFilenameRename-1.2.0.1-ojs3.4.tar.gz) — or browse all [Releases](../../releases).
 
 A generic plugin for **Open Journal Systems (OJS)** that delivers submission files under a
 **neutral, standardized name** when they are downloaded — `submission-123-file-456.pdf` — written
@@ -19,8 +19,8 @@ interface are **not** changed.
 
 | OJS version | Branch | Plugin release |
 |-------------|--------|----------------|
-| OJS 3.5.x   | [`stable-3_5_0`](../../tree/stable-3_5_0) *(default)* | 1.2.0.0 |
-| OJS 3.4.x   | [`stable-3_4_0`](../../tree/stable-3_4_0) | 1.2.0.0 |
+| OJS 3.5.x   | [`stable-3_5_0`](../../tree/stable-3_5_0) *(default)* | 1.2.0.1 |
+| OJS 3.4.x   | [`stable-3_4_0`](../../tree/stable-3_4_0) | 1.2.0.1 |
 
 Both branches ship the same features from **1.2.0.0**. The locale folders follow the codes of
 each OJS line (OJS 3.4: `fr_FR`, `pt_PT`, `nb`, `sr@latin`, `zh_CN`; OJS 3.5: `fr`, `pt`, `nb_NO`,
@@ -95,32 +95,36 @@ Open the plugin's **Settings**. Both choices show a live example in the current 
 
 ## Tests
 
-- **PHP suite** (`tests/`, 29 tests): translations (38 locales, identical keys, placeholders,
-  fuzzy markers, file-system-safe names), file name building in every language, fallbacks,
-  sanitization, extension, the submission file chosen for a shared stored file, the component
-  router of the workflow, the settings form and its validation, return types of the overridden
-  methods against the installed PKP. Run either way from the OJS root:
+- **PHPUnit** (`tests/*Test.php`, on `PKP\tests\PKPTestCase`): translations (38 locales, identical
+  keys, placeholders, fuzzy markers, file-system-safe names), file name building in every
+  language, fallbacks, sanitization, extension, the submission file chosen for a shared stored
+  file, the component router of the workflow, the settings form and its validation, the site level
+  without settings, and the plugin classes against the installed PKP. From the OJS root:
 
   ```bash
-  php plugins/generic/ojsbrFilenameRename/tests/run.php
   lib/pkp/lib/vendor/bin/phpunit --configuration lib/pkp/tests/phpunit.xml --no-coverage "$PWD/plugins/generic/ojsbrFilenameRename/tests"
   ```
 
-- **Cypress** (`cypress/tests/functional/OjsbrFilenameRename.cy.js`): the name of a published
-  galley downloaded in pt_BR, en and es; with a journal manager, the settings and their effect.
+- **Cypress** (`cypress/tests/functional/OjsbrFilenameRename.cy.js`, run by
+  [pkp-github-actions](https://github.com/pkp/pkp-github-actions) on every push): enables the
+  plugin, finds a published galley through the REST API, checks the name it is downloaded under in
+  every language of the journal (it fails with the hook off), and the effect of each setting,
+  putting the defaults back.
+- Verified on OJS 3.5.0.3 and 3.4.0.10: workflow and galley downloads in pt_BR, en and es, both
+  formats, both language settings, disabling and re-enabling.
 
-  ```bash
-  npx cypress run --config specPattern='plugins/generic/ojsbrFilenameRename/cypress/tests/functional/*.cy.js' \
-    --env contextPath=<journal>,galleyDownloadPath=article/download/<id>/<galleyId>/<submissionFileId>,adminUser=<user>,adminPassword=<password>
-  ```
-
-- Verified on OJS 3.5.0.3: workflow and galley downloads in pt_BR, en and es, both formats, both
-  language settings, disabling and re-enabling.
+Tests are kept in the repository and are not part of the release package.
 
 ## Credits & authorship
 
 - **Developed and maintained by** [OJSBR](https://ojsbr.com) — original plugin.
 - Distributed under the **GNU GPL v3**.
+
+## AI use
+
+Generative AI (Claude, by Anthropic) was used to write and run tests, improve the code and bring
+it in line with PKP standards. Every change is reviewed and tested by OJSBR, which is responsible
+for the published releases.
 
 ## Contributing
 
@@ -147,8 +151,8 @@ armazenado no servidor e o nome exibido na interface editorial **não** são alt
 
 | Versão do OJS | Branch | Release do plugin |
 |---------------|--------|-------------------|
-| OJS 3.5.x     | [`stable-3_5_0`](../../tree/stable-3_5_0) *(padrão)* | 1.2.0.0 |
-| OJS 3.4.x     | [`stable-3_4_0`](../../tree/stable-3_4_0) | 1.2.0.0 |
+| OJS 3.5.x     | [`stable-3_5_0`](../../tree/stable-3_5_0) *(padrão)* | 1.2.0.1 |
+| OJS 3.4.x     | [`stable-3_4_0`](../../tree/stable-3_4_0) | 1.2.0.1 |
 
 As duas branches têm os mesmos recursos a partir da **1.2.0.0**. As pastas de idioma seguem os
 códigos de cada linha do OJS (OJS 3.4: `fr_FR`, `pt_PT`, `nb`, `sr@latin`, `zh_CN`; OJS 3.5: `fr`,
@@ -192,15 +196,25 @@ Abra as **Configurações** do plugin. As duas escolhas mostram um exemplo no id
 
 ### Testes
 
-Suíte PHP em `tests/` (29 testes, rodando pelo `tests/run.php` ou pelo PHPUnit do PKP) e Cypress
-em `cypress/tests/functional/`, com os comandos da seção em inglês. Verificado no OJS 3.5.0.3:
-downloads do fluxo editorial e de composições em pt_BR, en e es, os dois formatos, as duas opções
-de idioma, desativar e reativar.
+PHPUnit em `tests/` (sobre `PKP\tests\PKPTestCase`) e Cypress em `cypress/tests/functional/`
+(rodado pelo [pkp-github-actions](https://github.com/pkp/pkp-github-actions) a cada push), com os
+comandos da seção em inglês. O Cypress acha uma composição publicada pela API REST, confere o nome
+de download em cada idioma da revista e o efeito de cada configuração, devolvendo o padrão.
+Verificado no OJS 3.5.0.3 e 3.4.0.10: downloads do fluxo editorial e de composições em pt_BR, en e
+es, os dois formatos, as duas opções de idioma, desativar e reativar.
+
+Os testes ficam no repositório e não fazem parte do pacote da release.
 
 ### Créditos e autoria
 
 - **Desenvolvido e mantido pela** [OJSBR](https://ojsbr.com) — plugin autoral.
 - Distribuído sob a **GNU GPL v3**.
+
+### Uso de IA
+
+Foi usada IA generativa (Claude, da Anthropic) para escrever e rodar testes, melhorar o código e
+alinhá-lo aos padrões da PKP. Toda mudança é revisada e testada pela OJSBR, que responde pelas
+releases publicadas.
 
 ### Licença
 

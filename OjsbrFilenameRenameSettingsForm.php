@@ -47,7 +47,7 @@ class OjsbrFilenameRenameSettingsForm extends Form
     }
 
     /**
-     * @copydoc Form::initData()
+     * Load the current settings of the journal.
      */
     public function initData()
     {
@@ -60,7 +60,7 @@ class OjsbrFilenameRenameSettingsForm extends Form
     }
 
     /**
-     * @copydoc Form::readInputData()
+     * Read the submitted settings.
      */
     public function readInputData()
     {
@@ -69,7 +69,7 @@ class OjsbrFilenameRenameSettingsForm extends Form
     }
 
     /**
-     * @copydoc Form::fetch()
+     * Render the form, with a sample name for each choice.
      *
      * @param null|mixed $template
      */
@@ -103,7 +103,7 @@ class OjsbrFilenameRenameSettingsForm extends Form
     }
 
     /**
-     * @copydoc Form::execute()
+     * Save the settings of the journal.
      */
     public function execute(...$functionArgs)
     {

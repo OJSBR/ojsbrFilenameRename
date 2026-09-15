@@ -51,64 +51,50 @@ class OjsbrFilenameRenamePlugin extends GenericPlugin
     public const MAX_STEM_LENGTH = 150;
 
     /**
-     * @copydoc Plugin::register()
+     * Register the plugin and, where it is enabled, its hook.
      *
-     * @param null|mixed $mainContextId
+     * @param string $category
+     * @param string $path
+     * @param null|int $mainContextId
      */
-    public function register($category, $path, $mainContextId = null)
+    public function register($category, $path, $mainContextId = null): bool
     {
-        if (!parent::register($category, $path, $mainContextId)) {
-            return false;
+        $success = parent::register($category, $path, $mainContextId);
+        // Downloads are always requests to a journal.
+        if (!$success || Application::isUnderMaintenance() || !$this->getEnabled($mainContextId)) {
+            return $success;
         }
 
-        // Do not touch the database while the system is being installed or upgraded.
-        if (Application::isUnderMaintenance()) {
-            return true;
-        }
+        // Called by PKPFileService::download() right before the headers are
+        // sent: Hook::call('File::download', [$file, &$filename, $inline]).
+        Hook::add('File::download', $this->renameOnDownload(...));
 
-        if ($this->getEnabled($mainContextId)) {
-            // Called by PKPFileService::download() right before the headers are
-            // sent: Hook::call('File::download', [$file, &$filename, $inline]).
-            Hook::add('File::download', $this->renameOnDownload(...));
-        }
-
-        return true;
+        return $success;
     }
 
     /**
-     * Keep the historical registry name: plugin settings of existing
-     * installations are stored under it.
-     *
-     * @copydoc Plugin::getName()
+     * Name shown in the plugins list.
      */
-    public function getName()
-    {
-        return 'ojsbrfilenamerenameplugin';
-    }
-
-    /**
-     * @copydoc Plugin::getDisplayName()
-     */
-    public function getDisplayName()
+    public function getDisplayName(): string
     {
         return __('plugins.generic.ojsbrFilenameRename.displayName');
     }
 
     /**
-     * @copydoc Plugin::getDescription()
+     * Description shown in the plugins list.
      */
-    public function getDescription()
+    public function getDescription(): string
     {
         return __('plugins.generic.ojsbrFilenameRename.description');
     }
 
     /**
-     * @copydoc Plugin::getActions()
+     * Add the settings action to the plugin entry in the plugins list.
      */
-    public function getActions($request, $actionArgs)
+    public function getActions($request, $actionArgs): array
     {
         $actions = parent::getActions($request, $actionArgs);
-        if (!$this->getEnabled()) {
+        if (!$request->getContext() || !$this->getEnabled()) {
             return $actions;
         }
 
@@ -131,17 +117,14 @@ class OjsbrFilenameRenamePlugin extends GenericPlugin
     }
 
     /**
-     * @copydoc Plugin::manage()
+     * Show and save the settings form.
      */
-    public function manage($args, $request)
+    public function manage($args, $request): JSONMessage
     {
-        if ($request->getUserVar('verb') !== 'settings') {
-            return parent::manage($args, $request);
-        }
-
+        // The settings belong to a journal; there is nothing to configure site-wide.
         $context = $request->getContext();
-        if (!$context) {
-            return new JSONMessage(false);
+        if ($request->getUserVar('verb') !== 'settings' || !$context) {
+            return parent::manage($args, $request);
         }
 
         $form = new OjsbrFilenameRenameSettingsForm($this, $context);
@@ -167,7 +150,7 @@ class OjsbrFilenameRenamePlugin extends GenericPlugin
      *
      * @param array $args [stdClass $file, string &$filename, bool $inline]
      */
-    public function renameOnDownload(string $hookName, array $args): bool
+    public function renameOnDownload($hookName, $args): bool
     {
         $file = $args[0] ?? null;
         $fileId = is_object($file) ? (int) ($file->id ?? $file->file_id ?? 0) : 0;

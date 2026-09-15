@@ -1,10 +1,10 @@
 # OJSBR Filename Rename — OJS plugin (OJS 3.4 branch)
 
 [![OJS](https://img.shields.io/badge/OJS-3.4-brightgreen)](https://pkp.sfu.ca/ojs/)
-[![Version](https://img.shields.io/badge/version-1.1.0.0-blue)](version.xml)
+[![Version](https://img.shields.io/badge/version-1.1.0.1-blue)](version.xml)
 [![License](https://img.shields.io/badge/license-GPL--3.0-lightgrey)](LICENSE)
 
-**⬇️ Install package:** [OJS 3.5](https://github.com/OJSBR/ojsbrFilenameRename/releases/download/1.1.0.2-ojs3.5/ojsbrFilenameRename-1.1.0.2-ojs3.5.tar.gz) · [OJS 3.4](https://github.com/OJSBR/ojsbrFilenameRename/releases/download/1.1.0.1-ojs3.4/ojsbrFilenameRename-1.1.0.1-ojs3.4.tar.gz) — or browse all [Releases](../../releases).
+**⬇️ Install package:** [OJS 3.5](https://github.com/OJSBR/ojsbrFilenameRename/releases/download/1.2.0.0/ojsbrFilenameRename-1.2.0.0.tar.gz) · [OJS 3.4](https://github.com/OJSBR/ojsbrFilenameRename/releases/download/1.1.0.1-ojs3.4/ojsbrFilenameRename-1.1.0.1-ojs3.4.tar.gz) — or browse all [Releases](../../releases).
 
 > **This is the `stable-3_4_0` branch (OJS 3.4).** For OJS 3.5 use the
 > [`stable-3_5_0`](../../tree/stable-3_5_0) branch.
@@ -27,8 +27,11 @@ per journal:
 
 | OJS version | Branch | Plugin release |
 |-------------|--------|----------------|
-| OJS 3.5.x   | [`stable-3_5_0`](../../tree/stable-3_5_0) *(default)* | 1.1.0.0 |
-| OJS 3.4.x   | [`stable-3_4_0`](../../tree/stable-3_4_0) *(this branch)* | 1.1.0.0 |
+| OJS 3.5.x   | [`stable-3_5_0`](../../tree/stable-3_5_0) *(default)* | 1.2.0.0 |
+| OJS 3.4.x   | [`stable-3_4_0`](../../tree/stable-3_4_0) *(this branch)* | 1.1.0.1 |
+
+The translatable file name (38 languages) and the choice of its language are available from
+**1.2.0.0 on OJS 3.5**. This branch still delivers the Portuguese name shown below.
 
 ## Installation
 
@@ -71,6 +74,16 @@ dois modos configuráveis por revista: **Padrão**
 
 > **Desenvolvido e mantido pela [OJSBR](https://ojsbr.com.br).** Veja a seção
 > [Créditos e autoria](#créditos-e-autoria) abaixo.
+
+### Compatibilidade e branches
+
+| Versão do OJS | Branch | Release do plugin |
+|---------------|--------|-------------------|
+| OJS 3.5.x     | [`stable-3_5_0`](../../tree/stable-3_5_0) *(padrão)* | 1.2.0.0 |
+| OJS 3.4.x     | [`stable-3_4_0`](../../tree/stable-3_4_0) *(esta branch)* | 1.1.0.1 |
+
+O nome de arquivo traduzível (38 idiomas) e a escolha do idioma existem a partir da **1.2.0.0 no
+OJS 3.5**. Esta branch continua entregando o nome em português.
 
 ### Instalação
 

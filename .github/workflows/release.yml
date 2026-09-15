@@ -4,8 +4,9 @@ name: Package plugin
 # GitHub Release is created), build the installable plugin package and attach it
 # to the matching Release automatically.
 #
-# The tarball unpacks as `<plugin>/…` (the repository name), so it can be
-# installed straight through OJS/OMP "Upload A New Plugin".
+# The tarball unpacks as `<plugin>/…`, named after <application> in version.xml
+# (OJS derives the class namespace from that directory name), so it can be
+# installed straight through OJS "Upload A New Plugin".
 
 on:
   push:
@@ -25,8 +26,9 @@ jobs:
       - name: Build installable tarball
         run: |
           NAME="${{ github.event.repository.name }}"
+          APP=$(grep -oP '(?<=<application>)[^<]+' version.xml | head -1)
           TAG="${{ github.ref_name }}"
-          git archive --format=tar.gz --prefix="$NAME/" -o "$NAME-$TAG.tar.gz" HEAD
+          git archive --format=tar.gz --prefix="$APP/" -o "$NAME-$TAG.tar.gz" HEAD
           ls -l "$NAME-$TAG.tar.gz"
 
       - name: Attach package to the Release

@@ -6,39 +6,50 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: en\n"
+"Language: zh_CN\n"
 
+#, fuzzy
 msgid "plugins.generic.ojsbrFilenameRename.displayName"
-msgstr "Rename Files on Download"
+msgstr "下载时重命名文件"
 
+#, fuzzy
 msgid "plugins.generic.ojsbrFilenameRename.description"
-msgstr "Delivers submission files under a neutral, standardized name on download, such as submission-123-file-456.pdf, in the language of the person downloading or of the journal, or as numbers only. The stored file and the name shown in the editorial interface are not changed."
+msgstr "下载时以中立、统一的名称提供投稿文件，例如 投稿-123-文件-456.pdf，使用下载者或期刊的语言，或仅使用数字。已存储的文件和编辑界面中显示的名称不会改变。"
 
+#, fuzzy
 msgid "plugins.generic.ojsbrFilenameRename.settings.description"
-msgstr "Choose how submission files are named when someone downloads them. The file stored on the server and the name shown in the editorial interface are not changed."
+msgstr "选择有人下载投稿文件时文件的命名方式。服务器上存储的文件和编辑界面中显示的名称不会改变。"
 
+#, fuzzy
 msgid "plugins.generic.ojsbrFilenameRename.settings.format"
-msgstr "File name format"
+msgstr "文件名格式"
 
+#, fuzzy
 msgid "plugins.generic.ojsbrFilenameRename.settings.format.descriptive"
-msgstr "Descriptive name: {$example}"
+msgstr "描述性名称：{$example}"
 
+#, fuzzy
 msgid "plugins.generic.ojsbrFilenameRename.settings.format.numbersOnly"
-msgstr "Numbers only: {$example}"
+msgstr "仅数字：{$example}"
 
+#, fuzzy
 msgid "plugins.generic.ojsbrFilenameRename.settings.language"
-msgstr "Language of the descriptive name"
+msgstr "描述性名称的语言"
 
+#, fuzzy
 msgid "plugins.generic.ojsbrFilenameRename.settings.language.description"
-msgstr "Does not apply to the numbers-only format. A language without this translation falls back to English."
+msgstr "不适用于仅数字格式。没有此翻译的语言将使用英语。"
 
+#, fuzzy
 msgid "plugins.generic.ojsbrFilenameRename.settings.language.user"
-msgstr "Interface language of the person downloading"
+msgstr "下载者的界面语言"
 
+#, fuzzy
 msgid "plugins.generic.ojsbrFilenameRename.settings.language.context"
-msgstr "Primary language of the journal, {$language}: {$example}"
+msgstr "期刊的主要语言（{$language}）：{$example}"
 
 #. File name delivered on download, without the extension. Keep both placeholders.
 #. Latin-script languages: lowercase letters without diacritics, digits and hyphens only.
+#, fuzzy
 msgid "plugins.generic.ojsbrFilenameRename.filename.descriptive"
-msgstr "submission-{$submissionId}-file-{$submissionFileId}"
+msgstr "投稿-{$submissionId}-文件-{$submissionFileId}"

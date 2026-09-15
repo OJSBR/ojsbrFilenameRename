@@ -6,39 +6,39 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: en\n"
+"Language: fr_FR\n"
 
 msgid "plugins.generic.ojsbrFilenameRename.displayName"
-msgstr "Rename Files on Download"
+msgstr "Renommer les Fichiers au Téléchargement"
 
 msgid "plugins.generic.ojsbrFilenameRename.description"
-msgstr "Delivers submission files under a neutral, standardized name on download, such as submission-123-file-456.pdf, in the language of the person downloading or of the journal, or as numbers only. The stored file and the name shown in the editorial interface are not changed."
+msgstr "Fournit les fichiers de la soumission sous un nom neutre et normalisé au téléchargement, par exemple soumission-123-fichier-456.pdf, dans la langue de la personne qui télécharge ou de la revue, ou uniquement avec des chiffres. Le fichier stocké et le nom affiché dans l'interface éditoriale ne sont pas modifiés."
 
 msgid "plugins.generic.ojsbrFilenameRename.settings.description"
-msgstr "Choose how submission files are named when someone downloads them. The file stored on the server and the name shown in the editorial interface are not changed."
+msgstr "Choisissez comment les fichiers de la soumission sont nommés lorsqu'une personne les télécharge. Le fichier stocké sur le serveur et le nom affiché dans l'interface éditoriale ne sont pas modifiés."
 
 msgid "plugins.generic.ojsbrFilenameRename.settings.format"
-msgstr "File name format"
+msgstr "Format du nom de fichier"
 
 msgid "plugins.generic.ojsbrFilenameRename.settings.format.descriptive"
-msgstr "Descriptive name: {$example}"
+msgstr "Nom descriptif : {$example}"
 
 msgid "plugins.generic.ojsbrFilenameRename.settings.format.numbersOnly"
-msgstr "Numbers only: {$example}"
+msgstr "Chiffres uniquement : {$example}"
 
 msgid "plugins.generic.ojsbrFilenameRename.settings.language"
-msgstr "Language of the descriptive name"
+msgstr "Langue du nom descriptif"
 
 msgid "plugins.generic.ojsbrFilenameRename.settings.language.description"
-msgstr "Does not apply to the numbers-only format. A language without this translation falls back to English."
+msgstr "Ne s'applique pas au format avec chiffres uniquement. Une langue sans cette traduction utilise l'anglais."
 
 msgid "plugins.generic.ojsbrFilenameRename.settings.language.user"
-msgstr "Interface language of the person downloading"
+msgstr "Langue de l'interface de la personne qui télécharge"
 
 msgid "plugins.generic.ojsbrFilenameRename.settings.language.context"
-msgstr "Primary language of the journal, {$language}: {$example}"
+msgstr "Langue principale de la revue, {$language} : {$example}"
 
 #. File name delivered on download, without the extension. Keep both placeholders.
 #. Latin-script languages: lowercase letters without diacritics, digits and hyphens only.
 msgid "plugins.generic.ojsbrFilenameRename.filename.descriptive"
-msgstr "submission-{$submissionId}-file-{$submissionFileId}"
+msgstr "soumission-{$submissionId}-fichier-{$submissionFileId}"

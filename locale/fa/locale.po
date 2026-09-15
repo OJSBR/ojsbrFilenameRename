@@ -1,0 +1,55 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: ojsbrFilenameRename\n"
+"Last-Translator: OJSBR\n"
+"Language-Team: OJSBR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: fa\n"
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.displayName"
+msgstr "تغییر نام فایل‌ها هنگام بارگیری"
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.description"
+msgstr "فایل‌های مقاله ارسالی را هنگام بارگیری با نامی خنثی و یکسان تحویل می‌دهد، مانند مقاله-123-فایل-456.pdf، به زبان فرد بارگیری‌کننده یا زبان مجله، یا فقط با عدد. فایل ذخیره‌شده و نام نمایش‌داده‌شده در رابط ویراستاری تغییر نمی‌کند."
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.description"
+msgstr "انتخاب کنید فایل‌های مقاله ارسالی هنگام بارگیری چگونه نام‌گذاری شوند. فایل ذخیره‌شده روی سرور و نام نمایش‌داده‌شده در رابط ویراستاری تغییر نمی‌کند."
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.format"
+msgstr "قالب نام فایل"
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.format.descriptive"
+msgstr "نام توصیفی: {$example}"
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.format.numbersOnly"
+msgstr "فقط عدد: {$example}"
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.language"
+msgstr "زبان نام توصیفی"
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.language.description"
+msgstr "برای قالب فقط عدد اعمال نمی‌شود. زبانی که این ترجمه را ندارد از انگلیسی استفاده می‌کند."
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.language.user"
+msgstr "زبان رابط کاربری فرد بارگیری‌کننده"
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.language.context"
+msgstr "زبان اصلی مجله، {$language}: {$example}"
+
+#. File name delivered on download, without the extension. Keep both placeholders.
+#. Latin-script languages: lowercase letters without diacritics, digits and hyphens only.
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.filename.descriptive"
+msgstr "مقاله-{$submissionId}-فایل-{$submissionFileId}"

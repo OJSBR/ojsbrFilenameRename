@@ -1,0 +1,55 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: ojsbrFilenameRename\n"
+"Last-Translator: OJSBR\n"
+"Language-Team: OJSBR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ka\n"
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.displayName"
+msgstr "ფაილების გადარქმევა ჩამოტვირთვისას"
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.description"
+msgstr "ჩამოტვირთვისას შენატანის ფაილებს ნეიტრალური, ერთგვაროვანი სახელით გადასცემს, მაგალითად შენატანი-123-ფაილი-456.pdf, ჩამომტვირთველის ან ჟურნალის ენაზე, ან მხოლოდ რიცხვებით. შენახული ფაილი და რედაქციულ ინტერფეისში ნაჩვენები სახელი არ იცვლება."
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.description"
+msgstr "აირჩიეთ, როგორ დაერქმევა შენატანის ფაილებს, როცა ვინმე მათ ჩამოტვირთავს. სერვერზე შენახული ფაილი და რედაქციულ ინტერფეისში ნაჩვენები სახელი არ იცვლება."
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.format"
+msgstr "ფაილის სახელის ფორმატი"
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.format.descriptive"
+msgstr "აღწერითი სახელი: {$example}"
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.format.numbersOnly"
+msgstr "მხოლოდ რიცხვები: {$example}"
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.language"
+msgstr "აღწერითი სახელის ენა"
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.language.description"
+msgstr "არ ეხება მხოლოდ რიცხვების ფორმატს. ენა, რომელსაც ეს თარგმანი არ აქვს, ინგლისურს იყენებს."
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.language.user"
+msgstr "ჩამომტვირთველის ინტერფეისის ენა"
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.language.context"
+msgstr "ჟურნალის ძირითადი ენა, {$language}: {$example}"
+
+#. File name delivered on download, without the extension. Keep both placeholders.
+#. Latin-script languages: lowercase letters without diacritics, digits and hyphens only.
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.filename.descriptive"
+msgstr "შენატანი-{$submissionId}-ფაილი-{$submissionFileId}"

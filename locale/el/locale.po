@@ -1,0 +1,55 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: ojsbrFilenameRename\n"
+"Last-Translator: OJSBR\n"
+"Language-Team: OJSBR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: el\n"
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.displayName"
+msgstr "Μετονομασία Αρχείων κατά τη Λήψη"
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.description"
+msgstr "Παραδίδει τα αρχεία της υποβολής με ουδέτερο, τυποποιημένο όνομα κατά τη λήψη, για παράδειγμα υποβολή-123-αρχείο-456.pdf, στη γλώσσα του ατόμου που κάνει λήψη ή του περιοδικού, ή μόνο με αριθμούς. Το αποθηκευμένο αρχείο και το όνομα στο περιβάλλον σύνταξης δεν αλλάζουν."
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.description"
+msgstr "Επιλέξτε πώς ονομάζονται τα αρχεία της υποβολής όταν κάποιος τα κατεβάζει. Το αρχείο στον διακομιστή και το όνομα στο περιβάλλον σύνταξης δεν αλλάζουν."
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.format"
+msgstr "Μορφή ονόματος αρχείου"
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.format.descriptive"
+msgstr "Περιγραφικό όνομα: {$example}"
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.format.numbersOnly"
+msgstr "Μόνο αριθμοί: {$example}"
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.language"
+msgstr "Γλώσσα του περιγραφικού ονόματος"
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.language.description"
+msgstr "Δεν ισχύει για τη μορφή μόνο με αριθμούς. Μια γλώσσα χωρίς αυτή τη μετάφραση χρησιμοποιεί τα αγγλικά."
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.language.user"
+msgstr "Γλώσσα διεπαφής του ατόμου που κάνει λήψη"
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.language.context"
+msgstr "Κύρια γλώσσα του περιοδικού, {$language}: {$example}"
+
+#. File name delivered on download, without the extension. Keep both placeholders.
+#. Latin-script languages: lowercase letters without diacritics, digits and hyphens only.
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.filename.descriptive"
+msgstr "υποβολή-{$submissionId}-αρχείο-{$submissionFileId}"

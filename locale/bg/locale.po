@@ -1,0 +1,55 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: ojsbrFilenameRename\n"
+"Last-Translator: OJSBR\n"
+"Language-Team: OJSBR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: bg\n"
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.displayName"
+msgstr "Преименуване на Файлове при Изтегляне"
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.description"
+msgstr "При изтегляне предоставя файловете на материала с неутрално, еднообразно име, например материал-123-файл-456.pdf, на езика на изтеглящия или на списанието, или само с цифри. Съхраненият файл и името в редакционния интерфейс не се променят."
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.description"
+msgstr "Изберете как да се именуват файловете на материала, когато някой ги изтегли. Файлът на сървъра и името в редакционния интерфейс не се променят."
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.format"
+msgstr "Формат на името на файла"
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.format.descriptive"
+msgstr "Описателно име: {$example}"
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.format.numbersOnly"
+msgstr "Само цифри: {$example}"
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.language"
+msgstr "Език на описателното име"
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.language.description"
+msgstr "Не се отнася за формата само с цифри. Език без този превод използва английски."
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.language.user"
+msgstr "Езикът на интерфейса на изтеглящия"
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.language.context"
+msgstr "Основният език на списанието, {$language}: {$example}"
+
+#. File name delivered on download, without the extension. Keep both placeholders.
+#. Latin-script languages: lowercase letters without diacritics, digits and hyphens only.
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.filename.descriptive"
+msgstr "материал-{$submissionId}-файл-{$submissionFileId}"

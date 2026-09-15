@@ -1,0 +1,55 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: ojsbrFilenameRename\n"
+"Last-Translator: OJSBR\n"
+"Language-Team: OJSBR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: eu\n"
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.displayName"
+msgstr "Fitxategiei Izena Aldatu Deskargatzean"
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.description"
+msgstr "Bidalketaren fitxategiak izen neutro eta normalizatu batekin ematen ditu deskargatzean, adibidez bidalketa-123-fitxategia-456.pdf, deskargatzen duenaren edo aldizkariaren hizkuntzan, edo zenbakiekin soilik. Gordetako fitxategia eta interfaze editorialean erakusten den izena ez dira aldatzen."
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.description"
+msgstr "Aukeratu nola izendatzen diren bidalketaren fitxategiak norbaitek deskargatzen dituenean. Zerbitzarian gordetako fitxategia eta interfaze editorialean erakusten den izena ez dira aldatzen."
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.format"
+msgstr "Fitxategi-izenaren formatua"
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.format.descriptive"
+msgstr "Izen deskribatzailea: {$example}"
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.format.numbersOnly"
+msgstr "Zenbakiak soilik: {$example}"
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.language"
+msgstr "Izen deskribatzailearen hizkuntza"
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.language.description"
+msgstr "Ez da aplikatzen zenbakiak soilik dituen formatuari. Itzulpen hau ez duen hizkuntza batek ingelesa erabiltzen du."
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.language.user"
+msgstr "Deskargatzen duenaren interfazearen hizkuntza"
+
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.settings.language.context"
+msgstr "Aldizkariaren hizkuntza nagusia, {$language}: {$example}"
+
+#. File name delivered on download, without the extension. Keep both placeholders.
+#. Latin-script languages: lowercase letters without diacritics, digits and hyphens only.
+#, fuzzy
+msgid "plugins.generic.ojsbrFilenameRename.filename.descriptive"
+msgstr "bidalketa-{$submissionId}-fitxategia-{$submissionFileId}"

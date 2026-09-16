@@ -17,7 +17,6 @@ namespace APP\plugins\generic\ojsbrFilenameRename\tests;
 use APP\core\Application;
 use APP\core\PageRouter;
 use APP\core\Request;
-use APP\journal\Journal;
 use APP\plugins\generic\ojsbrFilenameRename\OjsbrFilenameRenamePlugin;
 use APP\plugins\generic\ojsbrFilenameRename\OjsbrFilenameRenameSettingsForm;
 use Illuminate\Support\Facades\DB;
@@ -301,10 +300,11 @@ class OjsbrFilenameRenameTest extends PKPTestCase
 
     protected function context(string $primaryLocale): Context
     {
-        $journal = new Journal();
-        $journal->setId(1);
-        $journal->setData('primaryLocale', $primaryLocale);
-        return $journal;
+        // The journal of OJS or the press of OMP, whichever the suite runs on.
+        $context = Application::getContextDAO()->newDataObject();
+        $context->setId(1);
+        $context->setData('primaryLocale', $primaryLocale);
+        return $context;
     }
 
     /**

@@ -1,15 +1,16 @@
-# Rename Files on Download — OJS plugin
+# Rename Files on Download — OJS and OMP plugin
 
 [![OJS](https://img.shields.io/badge/OJS-3.4%20%7C%203.5-brightgreen)](https://pkp.sfu.ca/ojs/)
-[![Version](https://img.shields.io/badge/version-1.2.0.1-blue)](version.xml)
+[![OMP](https://img.shields.io/badge/OMP-3.5-brightgreen)](https://pkp.sfu.ca/omp/)
+[![Version](https://img.shields.io/badge/version-1.2.1.0-blue)](version.xml)
 [![License](https://img.shields.io/badge/license-GPL--3.0-lightgrey)](LICENSE)
 
-**⬇️ Install package:** [OJS 3.5](https://github.com/OJSBR/ojsbrFilenameRename/releases/download/1.2.0.1/ojsbrFilenameRename-1.2.0.1.tar.gz) · [OJS 3.4](https://github.com/OJSBR/ojsbrFilenameRename/releases/download/1.2.0.1-ojs3.4/ojsbrFilenameRename-1.2.0.1-ojs3.4.tar.gz) — or browse all [Releases](../../releases).
+**⬇️ Install package:** [OJS / OMP 3.5](https://github.com/OJSBR/ojsbrFilenameRename/releases/download/1.2.1.0/ojsbrFilenameRename-1.2.1.0.tar.gz) · [OJS 3.4](https://github.com/OJSBR/ojsbrFilenameRename/releases/download/1.2.0.1-ojs3.4/ojsbrFilenameRename-1.2.0.1-ojs3.4.tar.gz) — or browse all [Releases](../../releases).
 
-A generic plugin for **Open Journal Systems (OJS)** that delivers submission files under a
-**neutral, standardized name** when they are downloaded — `submission-123-file-456.pdf` — written
-in the language of the person downloading or in the primary language of the journal, or as
-numbers only (`123-456.pdf`). The file stored on the server and the name shown in the editorial
+A generic plugin for **Open Journal Systems (OJS)** and **Open Monograph Press (OMP)** that
+delivers submission files under a **neutral, standardized name** when they are downloaded —
+`submission-123-file-456.pdf` — written in the language of the person downloading or in the
+primary language of the journal or press, or as numbers only (`123-456.pdf`). The file stored on the server and the name shown in the editorial
 interface are **not** changed.
 
 > **Developed and maintained by [OJSBR](https://ojsbr.com).** See the
@@ -17,10 +18,13 @@ interface are **not** changed.
 
 ## Compatibility & branches
 
-| OJS version | Branch | Plugin release |
+| Application | Branch | Plugin release |
 |-------------|--------|----------------|
-| OJS 3.5.x   | [`stable-3_5_0`](../../tree/stable-3_5_0) *(default)* | 1.2.0.1 |
+| OJS 3.5.x and OMP 3.5.x | [`stable-3_5_0`](../../tree/stable-3_5_0) *(default)* | 1.2.1.0 |
 | OJS 3.4.x   | [`stable-3_4_0`](../../tree/stable-3_4_0) | 1.2.0.1 |
+
+> Since 1.2.1.0 the same package serves OJS and OMP. The former `ojsbrFilenameRenameOmp`
+> repository is archived; its releases stay available there.
 
 Both branches ship the same features from **1.2.0.0**. The locale folders follow the codes of
 each OJS line (OJS 3.4: `fr_FR`, `pt_PT`, `nb`, `sr@latin`, `zh_CN`; OJS 3.5: `fr`, `pt`, `nb_NO`,
@@ -110,7 +114,7 @@ Open the plugin's **Settings**. Both choices show a live example in the current 
   plugin, finds a published galley through the REST API, checks the name it is downloaded under in
   every language of the journal (it fails with the hook off), and the effect of each setting,
   putting the defaults back.
-- Verified on OJS 3.5.0.3 and 3.4.0.10: workflow and galley downloads in pt_BR, en and es, both
+- Verified on OJS 3.5.0.3, OMP 3.5.0.3 and OJS 3.4.0.10: workflow, galley and publication format downloads in pt_BR, en and es, both
   formats, both language settings, disabling and re-enabling.
 
 Tests are kept in the repository and are not part of the release package.
@@ -139,9 +143,10 @@ Distributed under the **GNU GPL v3**. See [`LICENSE`](LICENSE) and `docs/COPYING
 
 ## 🇧🇷 Português
 
-Plugin genérico para o **Open Journal Systems (OJS)** que entrega os arquivos da submissão com
-um **nome neutro e padronizado** no download — `submissao-123-arquivo-456.pdf` — no idioma de
-quem baixa ou no idioma principal da revista, ou somente com números (`123-456.pdf`). O arquivo
+Plugin genérico para o **Open Journal Systems (OJS)** e o **Open Monograph Press (OMP)** que
+entrega os arquivos da submissão com um **nome neutro e padronizado** no download —
+`submissao-123-arquivo-456.pdf` — no idioma de quem baixa ou no idioma principal da revista ou
+da editora, ou somente com números (`123-456.pdf`). O arquivo
 armazenado no servidor e o nome exibido na interface editorial **não** são alterados.
 
 > **Desenvolvido e mantido pela [OJSBR](https://ojsbr.com).** Veja a seção
@@ -149,10 +154,13 @@ armazenado no servidor e o nome exibido na interface editorial **não** são alt
 
 ### Compatibilidade e branches
 
-| Versão do OJS | Branch | Release do plugin |
-|---------------|--------|-------------------|
-| OJS 3.5.x     | [`stable-3_5_0`](../../tree/stable-3_5_0) *(padrão)* | 1.2.0.1 |
+| Aplicação | Branch | Release do plugin |
+|-----------|--------|-------------------|
+| OJS 3.5.x e OMP 3.5.x | [`stable-3_5_0`](../../tree/stable-3_5_0) *(padrão)* | 1.2.1.0 |
 | OJS 3.4.x     | [`stable-3_4_0`](../../tree/stable-3_4_0) | 1.2.0.1 |
+
+> A partir da 1.2.1.0 o mesmo pacote serve OJS e OMP. O repositório `ojsbrFilenameRenameOmp`
+> está arquivado; as releases dele continuam disponíveis lá.
 
 As duas branches têm os mesmos recursos a partir da **1.2.0.0**. As pastas de idioma seguem os
 códigos de cada linha do OJS (OJS 3.4: `fr_FR`, `pt_PT`, `nb`, `sr@latin`, `zh_CN`; OJS 3.5: `fr`,
@@ -200,7 +208,7 @@ PHPUnit em `tests/` (sobre `PKP\tests\PKPTestCase`) e Cypress em `cypress/tests/
 (rodado pelo [pkp-github-actions](https://github.com/pkp/pkp-github-actions) a cada push), com os
 comandos da seção em inglês. O Cypress acha uma composição publicada pela API REST, confere o nome
 de download em cada idioma da revista e o efeito de cada configuração, devolvendo o padrão.
-Verificado no OJS 3.5.0.3 e 3.4.0.10: downloads do fluxo editorial e de composições em pt_BR, en e
+Verificado no OJS 3.5.0.3, no OMP 3.5.0.3 e no OJS 3.4.0.10: downloads do fluxo editorial, de composições e de formatos de publicação em pt_BR, en e
 es, os dois formatos, as duas opções de idioma, desativar e reativar.
 
 Os testes ficam no repositório e não fazem parte do pacote da release.

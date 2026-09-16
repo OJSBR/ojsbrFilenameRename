@@ -32,9 +32,9 @@ describe('Rename Files on Download plugin', function() {
 		es: (s, f) => 'envio-' + s + '-fichero-' + f,
 	};
 
-	// article/download/{submissionId}/{galleyId}/{submissionFileId} of a published galley,
-	// and the languages the journal offers.
-	let galley = null;
+	// The download route of a published file — article/download/… in OJS,
+	// catalog/download/… in OMP — and the languages the journal or press offers.
+	let download_ = null;
 	let locales = [];
 
 	// ---- OJSBR spec helpers (padrão v2): work on OJS/OMP 3.3, 3.4 and 3.5 and in PKP's CI ----
@@ -43,7 +43,11 @@ describe('Rename Files on Download plugin', function() {
 
 	// Same as PKP's cy.waitJQuery(), which the support files of OJS 3.3 test sites may lack.
 	// The Plugins tab can keep requests open for a while (the plugin gallery), hence the timeout.
-	const waitJQuery = () => cy.window().its('jQuery.active', {timeout: 60000}).should('eq', 0);
+	// jQuery may not be on the page yet when this runs, so the check retries on the window
+	// itself instead of on a property that would resolve as undefined.
+	const waitJQuery = () => cy.window({timeout: 60000}).should((win) => {
+		expect(win.jQuery && win.jQuery.active, 'pending jQuery requests').to.eq(0);
+	});
 
 	// Requests carry the browser's User-Agent: OJS 3.3 drops a session whose agent changes.
 	const request = (options) => cy.window({log: false}).then((win) => cy.request(Object.assign(
@@ -106,6 +110,13 @@ describe('Rename Files on Download plugin', function() {
 		cy.get('input[id^="select-cell-' + rowName + '-enabled"]').should('be.checked');
 	};
 
+	// The form is only the plugin's once its PKP handler is attached: a Save clicked before
+	// that submits the form natively and leaves the page for the grid's manage URL. After a
+	// failed validation the modal replaces the form, so this is checked before every save.
+	const waitFormHandler = (formSelector) => cy.window({timeout: 30000}).should((win) => {
+		expect(win.jQuery(formSelector).data('pkp.handler'), 'form handler').to.exist;
+	});
+
 	// Opens the settings modal from the grid, without reloading the page: a reload right
 	// after saving can stall the web server of PKP's CI. The form is fetched each time.
 	const openPluginSettings = (rowName, formSelector) => {
@@ -117,9 +128,7 @@ describe('Rename Files on Download plugin', function() {
 		// The grid may still be animating the extras row: the link is clicked once it exists.
 		cy.get('a[id*="-row-' + rowName + '-settings-button-"]').first().click({force: true});
 		waitJQuery();
-		cy.window().should((win) => {
-			expect(win.jQuery(formSelector).data('pkp.handler')).to.exist;
-		});
+		waitFormHandler(formSelector);
 	};
 
 	// ---- end of helpers ----
@@ -129,7 +138,7 @@ describe('Rename Files on Download plugin', function() {
 	// A request with a session cookie always reaches the application, even on a site whose
 	// edge cache serves anonymous downloads. The language goes in the URL.
 	const download = (locale) => cy.request({
-		url: '/index.php/' + contextPath + '/' + locale + '/article/download/' + galley.submissionId + '/' + galley.galleyId + '/' + galley.submissionFileId + '?cb=' + Date.now(),
+		url: '/index.php/' + contextPath + '/' + locale + '/' + download_.path + '?cb=' + Date.now(),
 		headers: {Cookie: 'OJSSID=cypress' + Date.now() + Math.random().toString(36).slice(2)},
 		encoding: 'binary',
 	}).then((response) => {
@@ -141,6 +150,7 @@ describe('Rename Files on Download plugin', function() {
 	});
 
 	const save = (numbersOnly, filenameLocale) => {
+		waitFormHandler(settingsForm);
 		cy.get(settingsForm + ' input[name="numbersOnly"][value="' + numbersOnly + '"]').check({force: true});
 		cy.get(settingsForm + ' input[name="filenameLocale"][value="' + filenameLocale + '"]').check({force: true});
 		cy.get(settingsForm + ' button[id^="submitFormButton-"]').click({force: true});
@@ -155,19 +165,37 @@ describe('Rename Files on Download plugin', function() {
 		save(numbersOnly, filenameLocale);
 	};
 
-	it('Enables the plugin with its defaults and finds a published galley', function() {
+	it('Enables the plugin with its defaults and finds a published file', function() {
 		login(adminUser, adminPassword);
 		api(pageUrl('api/v1/submissions?status=3&count=30')).then((submissions) => {
 			const candidates = submissions.items.filter((item) => item.currentPublicationId);
 			const look = (i) => {
-				expect(i, 'a published article with a galley file').to.be.lessThan(candidates.length);
+				expect(i, 'a published submission with a file to download').to.be.lessThan(candidates.length);
 				api(pageUrl('api/v1/submissions/' + candidates[i].id + '/publications/' + candidates[i].currentPublicationId)).then((publication) => {
-					const withFile = (publication.galleys || []).find((item) => item.submissionFileId);
-					if (withFile) {
-						galley = {submissionId: candidates[i].id, galleyId: withFile.id, submissionFileId: withFile.submissionFileId};
-					} else {
-						look(i + 1);
+					// In OJS the galley of the API already names the file; in OMP the
+					// publication format does not, so the published page is read for the
+					// link the reader clicks (catalog/view/{book}/{format}/{file}).
+					const galley = (publication.galleys || []).find((item) => item.submissionFileId);
+					if (galley) {
+						download_ = {
+							path: 'article/download/' + candidates[i].id + '/' + galley.id + '/' + galley.submissionFileId,
+							submissionId: String(candidates[i].id),
+							submissionFileId: String(galley.submissionFileId),
+						};
+						return;
 					}
+					request({url: publication.urlPublished, failOnStatusCode: false}).then((page) => {
+						const match = /((?:article|catalog)\/(?:view|download)\/(\d+)\/\d+\/(\d+))/.exec(page.body || '');
+						if (match) {
+							download_ = {
+								path: match[1].replace('/view/', '/download/'),
+								submissionId: match[2],
+								submissionFileId: match[3],
+							};
+						} else {
+							look(i + 1);
+						}
+					});
 				});
 			};
 			look(0);
@@ -194,9 +222,9 @@ describe('Rename Files on Download plugin', function() {
 			download(locale).then((name) => {
 				expect(name).to.not.contain('##');
 				if (expected[locale]) {
-					expect(name).to.match(new RegExp('^' + expected[locale](galley.submissionId, galley.submissionFileId) + '\\.[a-z0-9]+(\\.gz)?$'));
+					expect(name).to.match(new RegExp('^' + expected[locale](download_.submissionId, download_.submissionFileId) + '\\.[a-z0-9]+(\\.gz)?$'));
 				} else {
-					expect(name).to.match(new RegExp('(^|\\D)' + galley.submissionId + '(\\D).*(\\D)' + galley.submissionFileId + '\\.[a-z0-9]+(\\.gz)?$'));
+					expect(name).to.match(new RegExp('(^|\\D)' + download_.submissionId + '(\\D).*(\\D)' + download_.submissionFileId + '\\.[a-z0-9]+(\\.gz)?$'));
 				}
 			});
 		});
@@ -204,7 +232,7 @@ describe('Rename Files on Download plugin', function() {
 
 	it('Delivers numbers only when asked to', function() {
 		configure('1', 'user');
-		download(locales[locales.length - 1]).then((name) => expect(name).to.match(new RegExp('^' + galley.submissionId + '-' + galley.submissionFileId + '\\.')));
+		download(locales[locales.length - 1]).then((name) => expect(name).to.match(new RegExp('^' + download_.submissionId + '-' + download_.submissionFileId + '\\.')));
 	});
 
 	it('Uses the primary language of the journal when asked to', function() {
